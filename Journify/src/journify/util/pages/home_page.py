@@ -1,169 +1,102 @@
 import streamlit as st
 from PIL import Image
 
-from ..functions.table import mask_equal
-from ..functions.col import pdb_code_col
-from ..functions.path import pages_str, data_str, get_file_path
-from ..functions.gui import load_st_table, write_st_end, create_st_button, show_st_structure, get_neighbor_path
-
-
 def home_page():
+    st.sidebar.image("intelligent_article_explorer_logo.png", use_column_width=True)
+    
+    # Sidebar navigation
+    st.sidebar.title("Navigation")
+    menu_options = ["Home", "Search Articles", "Q&A Chat Bot", "Submission Suggester", "Research Trendings", "About Us"]
+    choice = st.sidebar.radio("Go to", menu_options)
+    
+    if choice == "Home":
+        st.title("Welcome to Intelligent Article Explorer")
+        st.write("Our platform utilizes advanced AI algorithms to offer you personalized article suggestions, quick summaries, and precise search results. Discover how each feature enhances your learning and keeps you updated on topics you care about.")
+        
+        # Start Exploring button
+        if st.button("Start Exploring"):
+            st.write("Redirecting to Search Articles...")
+            # Redirect to Search Articles section
+            show_search_section()
+        
+    elif choice == "Search Articles":
+        show_search_section()
+    
+    elif choice == "Q&A Chat Bot":
+        show_chatbot_section()
+    
+    elif choice == "Submission Suggester":
+        show_suggester_section()
+    
+    elif choice == "Research Trendings":
+        show_trendings_section()
+    
+    elif choice == "About Us":
+        show_about_us()
 
-    left_col, right_col = st.columns(2)
+# Sections Functions
+def show_search_section():
+    st.header("Smart Search")
+    st.write("""
+        Our search function leverages **Natural Language Processing (NLP)** and **Machine Learning** to deliver the most relevant articles based on your queries. 
+        This search capability analyzes article content and metadata to understand context, synonyms, and popular topics.
+        """)
+    st.subheader("How it Works:")
+    st.write("""
+    - **Keyword Matching:** Matches keywords across titles, summaries, and tags for comprehensive results.
+    - **Contextual Understanding:** Semantic analysis and NLP ensure that articles align with your exact needs.
+    - **AI-Powered Ranking:** Articles are ranked by relevance, quality, and popularity, so the best content appears first.
+    """)
+    st.write("*Tips:* Use specific keywords or multiple keywords for more refined results.")
 
-    df = load_st_table(__file__)
+def show_chatbot_section():
+    st.header("Q&A Chat Bot")
+    st.write("""
+        Our AI-driven Q&A bot provides instant responses to your questions based on article content, summaries, and other resources in our database.
+        Gain insights, clarifications, and even article recommendations through intuitive and interactive conversation.
+        """)
+    st.subheader("How it Works:")
+    st.write("""
+    - **Contextual Querying:** The bot interprets the context of your questions and returns relevant answers from our knowledge base.
+    - **Continuous Learning:** The bot evolves with new data, improving its accuracy and the relevance of its responses over time.
+    """)
+    st.write("*Tips:* Start with open-ended questions or specific queries for tailored responses.")
 
-    show_st_structure(mask_equal(df, pdb_code_col, "6oim"),
-            zoom=1.2,
-            width=400,
-            height=300,
-            cartoon_trans=0,
-            surface_trans=1,
-            spin_on=True,
-            st_col=left_col)
+def show_suggester_section():
+    st.header("Submission Suggester")
+    st.write("""
+        Based on your interests and past readings, we provide personalized article suggestions to keep you engaged with the latest content.
+        This feature adapts and evolves with your reading patterns, ensuring a fresh, relevant feed every time.
+        """)
+    st.subheader("How it Works:")
+    st.write("""
+    - **Collaborative Filtering:** Our AI recommends articles by analyzing similar users' reading patterns.
+    - **Content-Based Filtering:** Recommendations are tailored to your preferred topics and authors.
+    - **Adaptive Algorithms:** Learns from your behavior to continually refine recommendations for an increasingly personalized experience.
+    """)
+    st.write("*Tips:* Engage with a variety of topics to see a broader range of recommendations.")
 
-    right_col.markdown("# Rascore")
-    right_col.markdown("### A tool for analyzing RAS protein structures")
-    right_col.markdown("**Created by Mitchell Parker and Roland Dunbrack**")
-    right_col.markdown("**Fox Chase Cancer Center**")
+def show_trendings_section():
+    st.header("Research Trendings")
+    st.write("""
+        Stay ahead with our trending articles feature, which showcases the latest and most popular research in real-time.
+        Get insights into the most-discussed topics and explore trending publications in your areas of interest.
+        """)
+    st.subheader("How it Works:")
+    st.write("""
+    - **Real-Time Updates:** Trending topics are updated regularly to reflect the latest interests in various fields.
+    - **Popular Metrics:** Content is prioritized based on readership and engagement metrics.
+    """)
+    st.write("*Tips:* Visit frequently to stay informed on current trends in your field.")
 
-    database_link_dict = {
-        "Cancer Research Paper": "https://aacrjournals.org/cancerres/article/doi/10.1158/0008-5472.CAN-22-0804/696349/Delineating-The-RAS-Conformational-LandscapeThe",
-        "GitHub Page": "https://github.com/mitch-parker/rascore",
-        "RCSB Protein Data Bank": "https://www.rcsb.org",
-    }
+def show_about_us():
+    st.header("About Us")
+    st.write("""
+        Intelligent Article Explorer is designed to enhance your research journey. Our team of developers, researchers, and data scientists created this tool 
+        with the aim to facilitate efficient article discovery, summarization, and trend monitoring.
+        """)
+    st.write("For further information, contact us at: **contact@intelligentexplorer.com**")
 
-    st.sidebar.markdown("## Database-Related Links")
-    for link_text, link_url in database_link_dict.items():
-        create_st_button(link_text, link_url, st_col=st.sidebar)
-
-    community_link_dict = {
-        "NCI RAS Initiative": "https://www.cancer.gov/research/key-initiatives/ras",
-        "KRAS Kickers": "https://www.kraskickers.org",
-        "RASopathies Network": "https://rasopathiesnet.org",
-    }
-
-    st.sidebar.markdown("## Community-Related Links")
-    for link_text, link_url in community_link_dict.items():
-        create_st_button(link_text, link_url, st_col=st.sidebar)
-
-    software_link_dict = {
-        "BioPython": "https://biopython.org",
-        "RDKit": "https://www.rdkit.org",
-        "PDBrenum": "http://dunbrack.fccc.edu/PDBrenum/",
-        "Fpocket": "https://bioserv.rpbs.univ-paris-diderot.fr/services/fpocket/",
-        "PyMOL": "https://pymol.org/2/",
-        "3Dmol": "https://3dmol.csb.pitt.edu",
-        "Pandas": "https://pandas.pydata.org",
-        "NumPy": "https://numpy.org",
-        "SciPy": "https://scipy.org",
-        "Sklearn": "https://scikit-learn.org/stable/",
-        "Matplotlib": "https://matplotlib.org",
-        "Seaborn": "https://seaborn.pydata.org",
-        "Streamlit": "https://streamlit.io",
-    }
-
-    st.sidebar.markdown("## Software-Related Links")
-    link_1_col, link_2_col, link_3_col = st.sidebar.columns(3)
-
-    i = 0
-    link_col_dict = {0: link_1_col, 1: link_2_col, 2: link_3_col}
-    for link_text, link_url in software_link_dict.items():
-
-        st_col = link_col_dict[i]
-        i += 1
-        if i == len(link_col_dict.keys()):
-            i = 0
-
-        create_st_button(link_text, link_url, st_col=st_col)
-
-    st.markdown("---")
-
-    st.markdown(
-        """
-        ### Summary
-        *Rascore* is a tool for analyzing structures of the RAS protein family
-        (KRAS, NRAS, and HRAS). The *Rascore* 
-        database presents a continually updated analysis of all available
-        RAS structures in the Protein Data Bank (PDB) with their catalytic switch 1 (SW1) 
-        and switch 2 (SW2) loops conformationally classified and their molecular 
-        contents annotated (e.g., mutation status, nucleotide state, 
-        bound protein, inhibitor site). 
-
-        Details of our work are 
-        provided in the [*Cancer Research*](https://aacrjournals.org/cancerres/article/doi/10.1158/0008-5472.CAN-22-0804/696349/Delineating-The-RAS-Conformational-LandscapeThe)
-        paper, **Delineating The RAS Conformational Landscape**.
-        We hope that researchers will use 
-        *Rascore* to gain novel insights into RAS biology and 
-        drug discovery. 
-        """
-    )
-
-    left_col, right_col = st.columns(2)
-
-    img = Image.open(
-        get_file_path(
-            "rascore_abstract.png",
-            dir_path=get_neighbor_path(__file__, pages_str, data_str),
-        )
-    )
-
-    right_col.image(img, output_format="PNG")
-
-
-    left_col.markdown(
-        """
-        ### Usage
-
-        To the left, is a dropdown main menu for navigating to 
-        each page in the *Rascore* database:
-
-        - **Home Page:** We are here!
-        - **Database Overview:** Overview of the *Rascore* database, molecular annotations, and RAS conformational classification.
-        - **Search PDB:** Search for individual PDB entries containing RAS structures.
-        - **Explore Conformations:** Explore RAS SW1 and SW2 conformations found in the PDB by nucleotide state.
-        - **Analyze Mutations:** Analyze the structural impact of RAS mutations by comparing WT and mutated structures.
-        - **Compare Inhibitors:** Compare inhibitor-bound RAS structures by compound binding site and chemical substructure.
-        - **Query Database:** Query the *Rascore* database by conformations and molecular annotations.
-        - **Classify Structures:** Conformationally classify and annotate the molecular contents of uploaded RAS structures.
-        """
-    )
-    st.markdown("---")
-
-    left_info_col, right_info_col = st.columns(2)
-
-    left_info_col.markdown(
-        f"""
-        ### Authors
-        Please feel free to contact us with any issues, comments, or questions.
-
-        ##### Mitchell Parker [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/bukotsunikki.svg?style=social&label=Follow%20%40Mitch_P)](https://twitter.com/Mitch_P)
-
-        - Email:  <mip34@drexel.edu> or <mitchell.parker@fccc.edu>
-        - GitHub: https://github.com/mitch-parker
-
-        ##### Roland Dunbrack [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/bukotsunikki.svg?style=social&label=Follow%20%40RolandDunbrack)](https://twitter.com/RolandDunbrack)
-
-        - Email: <roland.dunbrack@fccc.edu>
-        - GitHub: https://github.com/DunbrackLab
-        """,
-        unsafe_allow_html=True,
-    )
-
-    right_info_col.markdown(
-        """
-        ### Funding
-
-        - NIH NIGMS F30 GM142263 (to M.P.)
-        - NIH NIGMS R35 GM122517 (to R.D.)
-         """
-    )
-
-    right_info_col.markdown(
-        """
-        ### License
-        Apache License 2.0
-        """
-    )
-
-    write_st_end()
+# Main function to run the Streamlit application
+if __name__ == "__main__":
+    home_page()
