@@ -3,7 +3,7 @@ import streamlit as st
 
 def about_page():
     # Set up the page layout
-    st.set_page_config(page_title="About Us - Intelligent Article Explorer", layout="wide")
+    #st.set_page_config(page_title="About Us - Intelligent Article Explorer", layout="wide")
 
     # Header section
     # st.image("intelligent_article_explorer_logo.png", width=100)
