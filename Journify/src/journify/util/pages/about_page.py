@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="About Us - Intelligent Article Explorer", layout="wide")
 
 # Header section
-st.image("intelligent_article_explorer_logo.png", width=100)
+#st.image("intelligent_article_explorer_logo.png", width=100)
 st.title("About Intelligent Article Explorer")
 
 # Navigation
