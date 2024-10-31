@@ -1,6 +1,27 @@
 import pandas as pd
 import streamlit as st
 
+# Set up the page layout
+st.set_page_config(page_title="About Us - Intelligent Article Explorer", layout="wide")
+
+# Header section
+st.image("intelligent_article_explorer_logo.png", width=100)
+st.title("About Intelligent Article Explorer")
+
+# Navigation
+st.markdown("""
+<nav>
+    <ul>
+        <li><a href="welcome.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="summary.html">Summary</a></li>
+        <li><a href="suggestion.html">Suggestion</a></li>
+        <li><a href="trendings.html">Trendings</a></li>
+        <li><a href="about.html">About Us</a></li>
+    </ul>
+</nav>
+""", unsafe_allow_html=True)
+
 # About Section
 st.markdown("## About Intelligent Article Explorer")
 #col1, col2 = st.columns(2)
