@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 def home_page():
-    st.sidebar.image("intelligent_article_explorer_logo.png", use_column_width=True)
+    #st.sidebar.image("intelligent_article_explorer_logo.png", use_column_width=True)
     
     # Sidebar navigation
     st.sidebar.title("Navigation")
