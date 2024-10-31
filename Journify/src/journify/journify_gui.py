@@ -5,8 +5,6 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 import streamlit as st
 from PIL import Image
 
-from util.functions.path import get_file_path, get_dir_name, util_str, data_str
-
 from util.pages.home_page import home_page
 from util.pages.overview_page import overview_page
 from util.pages.articles_page import articles_page
