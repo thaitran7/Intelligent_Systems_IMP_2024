@@ -6,11 +6,11 @@ import streamlit as st
 from PIL import Image
 
 from util.pages.home_page import home_page
-from util.pages.overview_page import overview_page
-from util.pages.articles_page import articles_page
-from util.pages.chatbot_page import chatbot_page
-from util.pages.supporter_page import supporter_page
-from util.pages.trendings_page import trendings_page
+#from util.pages.overview_page import overview_page
+#from util.pages.articles_page import articles_page
+#from util.pages.chatbot_page import chatbot_page
+#from util.pages.supporter_page import supporter_page
+#from util.pages.trendings_page import trendings_page
 from util.pages.about_page import about_page
 
 
