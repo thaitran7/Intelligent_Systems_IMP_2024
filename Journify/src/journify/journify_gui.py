@@ -21,15 +21,15 @@ class MultiApp:
     def add_app(self, title, func):
         self.apps.append({"title": title, "function": func})
 
-    '''def run(self):
-        img = Image.open(
+    def run(self):
+        '''img = Image.open(
             get_file_path(
                 "rascore_logo.png",
                 dir_path=f"{get_dir_name(__file__)}/{util_str}/{data_str}",
             ),
         )'''
 
-        #st.set_page_config(page_title="Journify", page_icon=img, layout="wide")
+        st.set_page_config(page_title="Journify", page_icon=img, layout="wide")
 
         st.sidebar.markdown("## Main Menu")
         app = st.sidebar.selectbox(
