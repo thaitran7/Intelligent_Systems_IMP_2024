@@ -13,7 +13,6 @@ from util.pages.home_page import home_page
 #from util.pages.trendings_page import trendings_page
 from util.pages.about_page import about_page
 
-
 class MultiApp:
     def __init__(self):
         self.apps = []
