@@ -3,9 +3,9 @@ import streamlit as st
 
 # About Section
 st.markdown("## About Intelligent Article Explorer")
-col1, col2 = st.columns(2)
-col1.image("intelligent_article_explorer_logo.png", caption="Intelligent Article Explorer Logo", width=150)
-col2.image("bach_khoa_university_logo.png", caption="Bach Khoa University Logo", width=150)
+#col1, col2 = st.columns(2)
+#col1.image("intelligent_article_explorer_logo.png", caption="Intelligent Article Explorer Logo", width=150)
+#col2.image("bach_khoa_university_logo.png", caption="Bach Khoa University Logo", width=150)
 
 st.markdown("""
 ### Course Information
