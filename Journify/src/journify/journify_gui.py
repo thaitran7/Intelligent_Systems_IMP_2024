@@ -42,11 +42,11 @@ class MultiApp:
 app = MultiApp()
 
 app.add_app("Home Page", home_page)
-app.add_app("arXiv Overview", overview_page)
-app.add_app("Search Articles", articles_page)
-app.add_app("Q&A Chat Bot", chatbot_page)
-app.add_app("Submission Supporter", supporter_page)
-app.add_app("Research Trendings", trendings_page)
-app.add_app("About Us", about_page)
+#app.add_app("arXiv Overview", overview_page)
+#app.add_app("Search Articles", articles_page)
+#app.add_app("Q&A Chat Bot", chatbot_page)
+#app.add_app("Submission Supporter", supporter_page)
+#app.add_app("Research Trendings", trendings_page)
+#app.add_app("About Us", about_page)
 
 app.run()
