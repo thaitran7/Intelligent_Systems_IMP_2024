@@ -2,9 +2,9 @@ import base64
 import streamlit as st
 from PIL import Image
 from config.config import load_config
-from page.about_us import display_about_us
-from page.home import display_home
-from page.data_exploration import display_data_exploration
+from pages.about_us import about_us_page
+from pages.home import home_page
+from pages.trendings import trendings_page
 
 # Set page configuration as the first command
 st.set_page_config(
@@ -51,15 +51,12 @@ class MultiApp:
 
 # Initialize and add pages
 app = MultiApp()
-app.add_app("Home Page", display_home)
-app.add_app("Database Overview", display_data_exploration)
-app.add_app("Search PDB", display_data_exploration)  # Replace with actual function
-app.add_app("Explore Conformations", display_data_exploration)  # Replace with actual function
-app.add_app("Analyze Mutations", display_data_exploration)  # Replace with actual function
-app.add_app("Compare Inhibitors", display_data_exploration)  # Replace with actual function
-app.add_app("Query Database", display_data_exploration)  # Replace with actual function
-app.add_app("Classify Structures", display_data_exploration)  # Replace with actual function
-app.add_app("About Us", display_about_us)
+app.add_app("Home Page", home_page)
+app.add_app("Search Articles", display_data_exploration)
+app.add_app("Chat Bot", display_data_exploration)  # Replace with actual function
+app.add_app(Journal Suggester", display_data_exploration)  # Replace with actual function
+app.add_app("Research Trendings", display_data_exploration)  # Replace with actual function
+app.add_app("About us", about_us_page)  # Replace with actual function
 
 # Run the application
 app.run()
