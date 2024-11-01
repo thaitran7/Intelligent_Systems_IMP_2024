@@ -15,8 +15,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-load_config()
-
 # Function to encode images to base64
 def load_image(image_file):
     try:
