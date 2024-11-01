@@ -83,7 +83,7 @@ st.sidebar.markdown(
     """
     <div style='text-align: center;'>
     🚀 <strong>Transforming Learning into Lifelong Growth</strong><br>
-    **Journify** is here to support you on your journey toward academic excellence.<br> 
+    <strong>Journify<strong> is to support your journey toward academic excellence.<br> 
     <em>Join us in unlocking new possibilities through knowledge and innovation.</em>
     </div>
     """, unsafe_allow_html=True
