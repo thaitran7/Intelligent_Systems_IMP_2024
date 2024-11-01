@@ -1,11 +1,3 @@
-# Set page configuration as the first command
-st.set_page_config(
-    page_title="Journify",
-    page_icon=":shield:",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 import base64
 import streamlit as st
 from PIL import Image
@@ -13,6 +5,14 @@ from config.config import load_config
 from page.about_us import display_about_us
 from page.home import display_home
 from page.data_exploration import display_data_exploration
+
+# Set page configuration as the first command
+st.set_page_config(
+    page_title="Journify",
+    page_icon=":shield:",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Function to encode images to base64
 def load_image(image_file):
