@@ -2,8 +2,8 @@ import json
 import sqlite3
 import re, os
 
-json_file_path = "database/arxiv-metadata-oai-snapshot.json"  # Replace with your JSON file path
-sqlite_db_path = "database/arxiv-metadata-oai-snapshot.db"    # Replace with your desired database path
+json_file_path = "Journify/database/arxiv-metadata-oai-snapshot.json"  # Replace with your JSON file path
+sqlite_db_path = "Journify/database/arxiv-metadata-oai-snapshot.db"    # Replace with your desired database path
 
 def clean_value(value):
     """Clean and normalize individual data values for SQLite."""
