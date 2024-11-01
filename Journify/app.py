@@ -18,7 +18,7 @@ st.set_page_config(
 st.sidebar.image("Journify/resource/journify_logo.png")
 st.sidebar.header("How to use Journify")
 
-# ------------------ MultiApp Structure with Sidebar Buttons ------------------ #
+# ------------------ MultiApp Structure with Selectbox and Markdown ------------------ #
 class MultiApp:
     def __init__(self):
         self.apps = []
@@ -27,27 +27,23 @@ class MultiApp:
         self.apps.append({"title": title, "function": func})
 
     def run(self):
-        # Sidebar menu for each added app
+        # Display the main menu with markdown and a selectbox for navigation
         st.sidebar.markdown("## Main Menu")
-        selected_app = None
         
-        # Display each app title as a button in the sidebar
-        for app in self.apps:
-            if st.sidebar.button(app["title"]):
-                selected_app = app["function"]
+        # Use selectbox to allow the user to choose an app
+        app = st.sidebar.selectbox(
+            "Select Page", self.apps, format_func=lambda app: app["title"]
+        )
+        
+        st.sidebar.markdown("---")  # Divider line
 
-        st.sidebar.markdown("---")
-
-        # Display the selected app function (if any)
-        if selected_app:
-            selected_app()
-        else:
-            st.write("Select a page from the sidebar.")
+        # Display the selected app function
+        app["function"]()
 
 # Initialize the MultiApp instance
 app = MultiApp()
 
-# Add pages as individual apps
+# Add each page to the app
 app.add_app("Home Page", display_home)
 app.add_app("Database Overview", display_data_exploration)
 app.add_app("Search PDB", display_data_exploration)  # Replace with actual function
