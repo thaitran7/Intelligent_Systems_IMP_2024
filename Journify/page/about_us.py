@@ -14,8 +14,8 @@ def load_image(image_path):
         return base64.b64encode(image_file.read()).decode()
 
 # Load the images
-journify_logo = load_image("/resource/journify_logo.png")
-hcmut_logo = load_image("/resource/hcmut_logo.jpg")
+journify_logo = load_image("resource/journify_logo.png")
+hcmut_logo = load_image("resource/hcmut_logo.jpg")
 
 # Define a function to display the "About Us" section
 def display_about_us():
