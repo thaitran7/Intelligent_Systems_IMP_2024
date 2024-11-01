@@ -1,3 +1,12 @@
+# Set page configuration as the first command
+st.set_page_config(
+    page_title="Journify",
+    page_icon=":shield:",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+Edit this one for tabs in the middle of page, font size bigger 
 import streamlit as st
 from config.config import load_config
 from page.about_us import display_about_us
@@ -14,26 +23,11 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS to increase font size of the entire app and tabs
-st.markdown(
-    """
-    <style>
-    body {
-        font-size: 18px;  /* Increase general font size */
-    }
-    /* Increase font size of tabs */
-    .stTabs {
-        font-size: 20px; /* Adjust tab font size */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 st.sidebar.image("Journify/resource/journify.png")
 st.sidebar.header("How to use Journify")
 
 st.sidebar.header("About")
+
 with st.sidebar:
     st.markdown(
         "Welcome to **Journify** (Intelligent Journal Explorer), an AI-powered platform designed to provide users with curated article recommendations and an intelligent Q&A chatbot for arXiv papers."
@@ -48,7 +42,6 @@ with st.sidebar:
         """
     )
     st.markdown("Created by the Journify Team.")
-    
     # Add "Star on GitHub" link to the sidebar
     st.sidebar.markdown(
         "⭐ Star on GitHub: [![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)](https://github.com/tan-nt/real-life-streamlit-app)"
@@ -94,16 +87,11 @@ with st.sidebar:
     Provide detailed queries and specify topics clearly. The more context you give, the more relevant and accurate the recommendations and responses from Journify will be.
     """
     )
-
+    
 # ------------------ Main App UI ------------------ #
-# Create tabs in the middle of the page
-tab1, tab2, tab3, tab4 = st.tabs(["Home", "Article Recommendation", "Data Exploration", "About Us"])
-
+tab1, tab2, tab3, tab4 = st.tabs(["Home", "Article recommendation", "Data exploration", "About Us"])
 with tab1:
     display_home()
-with tab2:
-    # This should call your article recommendation function, which you need to define
-    pass  # Replace with display_article_recommendation() when it's defined
 with tab3:
     display_data_exploration()
 with tab4:
