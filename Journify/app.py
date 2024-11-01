@@ -66,7 +66,7 @@ st.sidebar.markdown(
     <div style='display: flex; justify-content: center;'>
     <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="150">
     </div>
-    """
+    """, unsafe_allow_html=True
 )
 
 # Brief, engaging description with emojis and enhanced formatting
