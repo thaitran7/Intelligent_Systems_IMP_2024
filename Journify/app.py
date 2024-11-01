@@ -14,29 +14,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS to increase font size and center tabs
+# Custom CSS to increase font size of the entire app and tabs
 st.markdown(
     """
     <style>
-    /* Increase font size for all text */
     body {
-        font-size: 18px;  /* Increase font size */
+        font-size: 18px;  /* Increase general font size */
     }
-    
-    /* Style for the tabs */
+    /* Increase font size of tabs */
     .stTabs {
-        justify-content: center; /* Center tabs */
-    }
-
-    .stTabs .stTabs__tab {
-        font-size: 20px;  /* Increase tab font size */
-        padding: 12px 24px; /* Adjust padding for better clickability */
-    }
-
-    /* Center the tabs */
-    .stTabs {
-        display: flex;
-        justify-content: center;
+        font-size: 20px; /* Adjust tab font size */
     }
     </style>
     """,
@@ -109,7 +96,9 @@ with st.sidebar:
     )
 
 # ------------------ Main App UI ------------------ #
+# Create tabs in the middle of the page
 tab1, tab2, tab3, tab4 = st.tabs(["Home", "Article Recommendation", "Data Exploration", "About Us"])
+
 with tab1:
     display_home()
 with tab2:
