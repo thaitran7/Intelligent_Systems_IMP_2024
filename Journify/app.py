@@ -4,14 +4,14 @@ from page.about_us import display_about_us
 from page.home import display_home
 from page.data_exploration import display_data_exploration
 
-load_config()
-
 st.set_page_config(
     page_title="Journify",
     page_icon=":shield:",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+load_config()
 
 st.sidebar.image("Journify/resource/journify.png")
 st.sidebar.header("How to use Journify")
