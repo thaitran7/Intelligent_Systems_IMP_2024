@@ -14,16 +14,29 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS to increase font size for the entire app and specifically for the tabs
+# Custom CSS to increase font size and center tabs
 st.markdown(
     """
     <style>
+    /* Increase font size for all text */
     body {
-        font-size: 18px;  /* Increase global font size */
+        font-size: 18px;  /* Increase font size */
     }
+    
+    /* Style for the tabs */
     .stTabs {
-        font-size: 50px;  /* Increase tab font size */
-        text-align: center; /* Center align the tabs */
+        justify-content: center; /* Center tabs */
+    }
+
+    .stTabs .stTabs__tab {
+        font-size: 20px;  /* Increase tab font size */
+        padding: 12px 24px; /* Adjust padding for better clickability */
+    }
+
+    /* Center the tabs */
+    .stTabs {
+        display: flex;
+        justify-content: center;
     }
     </style>
     """,
@@ -97,18 +110,12 @@ with st.sidebar:
 
 # ------------------ Main App UI ------------------ #
 tab1, tab2, tab3, tab4 = st.tabs(["Home", "Article Recommendation", "Data Exploration", "About Us"])
-# Center the tabs by adding additional empty space
-st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space above the tabs
-
 with tab1:
     display_home()
 with tab2:
-    # Placeholder for article recommendation display function
+    # This should call your article recommendation function, which you need to define
     pass  # Replace with display_article_recommendation() when it's defined
 with tab3:
     display_data_exploration()
 with tab4:
     display_about_us()
-
-# Optionally, you can add some space below the tabs as well
-st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space below the tabs
