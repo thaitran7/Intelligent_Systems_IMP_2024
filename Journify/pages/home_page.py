@@ -4,8 +4,7 @@ from PIL import Image
 def home_page():
     # Title and logo
     st.title("Welcome to Journify!")
-    st.image("path/to/journify_logo.png", width=200)  # Update with your Journify logo path
-    st.image("https://arxiv.org/arxiv_logo.png", width=100)  # arXiv logo
+    st.image("../sources/journify_logo.png", width=200)  # Update with your Journify logo path
 
     # Brief Introduction
     st.markdown(
@@ -31,6 +30,7 @@ def home_page():
         )
 
     # The arXiv Dataset
+    st.image("https://arxiv.org/arxiv_logo.png", width=100)  # arXiv logo
     st.header("About the arXiv Dataset")
     st.markdown(
         """
