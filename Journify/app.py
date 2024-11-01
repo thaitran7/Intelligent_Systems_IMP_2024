@@ -15,63 +15,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Display a smaller logo with a width setting
-st.sidebar.image("Journify/resource/journify_logo.png", width=150)
-
-# Add an appealing title and slogan
-st.sidebar.title("Journify")
-st.sidebar.markdown("### Transforming Learning into Lifelong Growth")
-
-# Brief, engaging description
-st.sidebar.markdown(
-    """
-    **Welcome to Journify**, your intelligent journal explorer powered by AI. Journify is crafted to 
-    empower researchers, students, and curious minds by providing:
-    - **Curated article recommendations** for deep insights across a range of topics.
-    - An **AI-driven Q&A chatbot** designed to answer your research questions quickly and accurately.
-    
-    Explore the power of AI in academic research with our **state-of-the-art technology**:
-    - **K-Nearest Neighbors (KNN)** for efficient subject classification.
-    - **Bayesian Search** for refined, intelligent querying.
-    - **High-accuracy recommendation engines** using **HNSW-ANN** and **BERT (Weaviate)**.
-    - **Large Language Model (LLM) + RAG Chatbot** for responsive and reliable answers.
-    
-    Join us in turning learning into growth and unlock new possibilities with **Journify**.
-    """
-)
-
-# Add a call to action for engagement
-st.sidebar.markdown("#### ⭐ Explore, Learn, and Grow with Journify!")
-st.sidebar.markdown(
-    "Support us by starring on GitHub: "
-    "[![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)]"
-    "(https://github.com/tan-nt/real-life-streamlit-app)"
-)
-
-# Separator line for structure
-st.sidebar.markdown("---")
-
-# Frequently Asked Questions (FAQ) Section
-st.sidebar.header("FAQs")
-st.sidebar.markdown(
-    """
-    **What is Journify?**  
-    Journify is a platform that leverages AI to recommend articles and answer research questions. It's your academic companion for discovery and insight.
-    
-    **How does Journify work?**  
-    With KNN classification, Bayesian search, and recommendation models, Journify brings you personalized, high-accuracy content.
-
-    **Is my data stored?**  
-    No, all queries are temporary and deleted at the session's end.
-    
-    **Why can it take time to generate responses?**  
-    Complex queries may require additional processing. Free-tier users may experience some delay due to system limits.
-    
-    **Tips for best results:**  
-    Provide detailed questions with clear topics for more accurate recommendations.
-    """
-)
-
 # ------------------ Main App UI ------------------ #
 class MultiApp:
     def __init__(self):
@@ -107,3 +50,36 @@ app.add_app("About Us", display_about_us)
 
 # Run the application
 app.run()
+
+st.sidebar.markdown("---")
+
+# Display a smaller logo with a width setting
+st.sidebar.image("Journify/resource/journify_logo.png", width=150)
+
+# Brief, engaging description
+st.sidebar.markdown(
+    """
+    **Welcome to Journify**, your intelligent journal explorer powered by AI. Journify is crafted to 
+    empower researchers, students, and curious minds by providing:
+    - **Curated article recommendations** for deep insights across a range of topics.
+    - An **AI-driven Q&A chatbot** designed to answer your research questions quickly and accurately.
+    """
+)
+
+st.sidebar.markdown("---")
+
+st.sidebar.markdown(
+    """
+    Join us in turning learning into growth and unlock new possibilities with **Journify**.
+    """
+)
+
+# Add a call to action for engagement
+st.sidebar.markdown("#### ⭐ Explore, Learn, and Grow with Journify!")
+st.sidebar.markdown(
+    "Support us by starring on GitHub: "
+    "[![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)]"
+    "(https://github.com/tan-nt/real-life-streamlit-app)"
+)
+
+
