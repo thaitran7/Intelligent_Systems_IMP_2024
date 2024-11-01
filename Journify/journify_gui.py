@@ -54,7 +54,7 @@ app = MultiApp()
 app.add_app("Home Page", home_page)
 app.add_app("Search Articles", search_page)
 app.add_app("Chat Bot", trendings_page)  # Replace with actual function
-app.add_app(Journal Suggester", search_page)  # Replace with actual function
+app.add_app("Journal Suggester", search_page)  # Replace with actual function
 app.add_app("Research Trendings", search_page)  # Replace with actual function
 app.add_app("About us", about_us_page)  # Replace with actual function
 
