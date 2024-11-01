@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 
-def display_home():
+def home_page():
     # Title and logo
     st.title("Welcome to Journify!")
     st.image("path/to/journify_logo.png", width=200)  # Update with your Journify logo path
@@ -115,4 +115,4 @@ def display_home():
     )
 
 # Call the display function
-display_home()
+home_page()
