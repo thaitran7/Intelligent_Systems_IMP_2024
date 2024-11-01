@@ -4,7 +4,7 @@ from PIL import Image
 def home_page():
     # Title and logo
     st.title("Welcome to Journify!")
-    st.image("../source/journify_logo.png", width=200)  # Update with your Journify logo path
+    st.image("../resource/journify_logo.png", width=200)  # Update with your Journify logo path
 
     # Brief Introduction
     st.markdown(
