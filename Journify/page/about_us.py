@@ -162,10 +162,10 @@ def display_about_us():
             html_content += f"""
             <div class='profile-card'>
                 <h3>{member["name"]}</h3>
+                <p><strong>ID:</strong> {member["id"]}</p>
                 <p><strong>{member["role"]}</strong></p>
                 <p>{member["contribution"]}</p>
                 <div class="contact-info">
-                    <p><strong>ID:</strong> {member["id"]}</p>
                     <p><strong>Email:</strong> <a href="{member["email"]}">{member["email"].replace("mailto:", "")}</a></p>
                 </div>
             </div>
