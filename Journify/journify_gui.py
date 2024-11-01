@@ -11,8 +11,7 @@ from pages.trendings_page import trendings_page
 st.set_page_config(
     page_title="Journify",
     page_icon=":shield:",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="wide"
 )
 
 load_config()
