@@ -11,7 +11,7 @@ journify_logo = load_image("Journify/resource/journify_logo.png")
 hcmut_logo = load_image("Journify/resource/hcmut_logo.jpg")
 
 # Define a function to display the "About Us" section
-def display_about_us():
+def about_us_page():
     # Team member data
     team_members = [
         {
