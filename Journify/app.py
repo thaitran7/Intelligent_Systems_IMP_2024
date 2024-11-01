@@ -25,13 +25,13 @@ class MultiApp:
 
     def run(self):
         # Sidebar for selecting the app
-        st.sidebar.markdown("<h2 style='text-align: center;'>Main Menu</h2>", unsafe_allow_html=True)
+        st.sidebar.markdown("## Main Menu")
         
-        # Selectbox for navigation with a centered title
+        # Selectbox for navigation
         app = st.sidebar.selectbox(
             "Select Page", self.apps, format_func=lambda app: app["title"]
         )
-        st.sidebar.markdown("<hr style='border: 1px solid #d3d3d3;'>", unsafe_allow_html=True)
+        st.sidebar.markdown("---")
         
         # Display the selected page content
         app["function"]()
@@ -51,51 +51,54 @@ app.add_app("About Us", display_about_us)
 # Run the application
 app.run()
 
-# Display a centered and smaller logo
-st.sidebar.markdown(
-    "<div style='text-align: center;'>"
-    "<img src='Journify/resource/journify_logo.png' width='120' alt='Journify Logo'>"
-    "</div>",
-    unsafe_allow_html=True
-)
+# Centered Logo and Additional Sidebar Content
+st.sidebar.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
+st.sidebar.image("Journify/resource/journify_logo.png", width=120)
+st.sidebar.markdown("</div>", unsafe_allow_html=True)
 
-# Add a brief, engaging description with interactive styles
+# Brief, engaging description with emojis and enhanced formatting
 st.sidebar.markdown(
     """
-    <div style="padding: 15px; text-align: center; border-radius: 10px; background-color: #f0f0f0;">
-    <strong>Welcome to Journify</strong>, your intelligent journal explorer powered by AI.<br><br>
-    Journify empowers researchers, students, and curious minds by providing:<br>
-    <ul style="text-align: left;">
-        <li>Curated article recommendations for deep insights across topics.</li>
-        <li>An AI-driven Q&A chatbot to answer research questions quickly.</li>
-    </ul>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-# Add a motivational call-to-action and slogan
-st.sidebar.markdown(
-    """
-    <div style="text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold;">
-    ⭐ Explore, Learn, and Grow with Journify!
-    </div>
+    **Welcome to Journify** 🌱  
+    Your intelligent journal explorer powered by AI. Journify empowers researchers, students, and curious minds by providing:
+    - 🔍 **Curated Article Recommendations** across a wide range of topics.
+    - 🤖 **AI-driven Q&A Chatbot** for quick, accurate answers to your research questions.
     """
 )
 
-# Call-to-action to support Journify on GitHub with a clickable button
+st.sidebar.markdown("---")
+
+# Vision and Mission Statement
 st.sidebar.markdown(
     """
-    <div style="text-align: center; margin-top: 20px;">
-    <a href="https://github.com/tan-nt/real-life-streamlit-app" target="_blank">
-        <button style="background-color: #ff4b4b; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1em;">
-            Star on GitHub
-        </button>
-    </a>
-    </div>
-    """,
-    unsafe_allow_html=True
+    🚀 **Transforming Learning into Lifelong Growth**  
+    Journify is here to support you on your journey toward academic excellence. Join us in unlocking new possibilities through knowledge and innovation.
+    """
 )
 
-# Separator line for structure
-st.sidebar.markdown("<hr style='border: 1px solid #d3d3d3;'>", unsafe_allow_html=True)
+# Call to Action and Social Engagement
+st.sidebar.markdown("#### ⭐ Explore, Learn, and Grow with Journify!")
+st.sidebar.markdown(
+    """
+    [![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)](https://github.com/tan-nt/real-life-streamlit-app)
+    """
+)
+
+st.sidebar.markdown("---")
+
+# FAQ Section with collapsible details for interactivity
+st.sidebar.header("FAQs")
+with st.sidebar.expander("What is Journify?"):
+    st.write("Journify is a platform that leverages AI to recommend articles and answer research questions, providing you with an academic companion for discovery and insight.")
+
+with st.sidebar.expander("How does Journify work?"):
+    st.write("Using advanced algorithms such as KNN classification, Bayesian search, and recommendation models, Journify personalizes high-accuracy content based on your research needs.")
+
+with st.sidebar.expander("Is my data stored?"):
+    st.write("No, all queries are processed in real-time and deleted at the session's end to ensure privacy.")
+
+with st.sidebar.expander("Why might responses take some time?"):
+    st.write("Complex queries require additional processing time. Free-tier users may experience some delay due to system limits.")
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("📘 **Tips for Best Results**: Provide detailed questions for more accurate recommendations and improved insights.")
