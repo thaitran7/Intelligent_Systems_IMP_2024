@@ -186,4 +186,4 @@ def about_us_page():
     st.components.v1.html(html_content, height=1200)
 
 # Run the function to display the About Us section
-display_about_us()
+about_us_page()
