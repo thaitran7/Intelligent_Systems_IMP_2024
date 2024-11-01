@@ -137,6 +137,7 @@ def display_about_us():
         }
     </style>
     
+    """
     # Start assembling the full HTML content
     html_content = css_content + "<div class='container'>"
     
