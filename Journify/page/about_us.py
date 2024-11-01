@@ -141,10 +141,10 @@ def display_about_us():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.image("Journify/resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=150)
+        st.image("Journify/resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=60)
 
     with col2:
-        st.image("Journify/resource/hcmut_logo.jpg", caption="Bach Khoa University Logo", width=150)
+        st.image("Journify/resource/hcmut_logo.jpg", caption="Bach Khoa University Logo", width=60)
 
     # Additional information
     st.markdown("<p><strong>Course:</strong> Intelligent Systems</p>", unsafe_allow_html=True)
