@@ -14,23 +14,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-Edit this one for tabs in the middle of page, font size bigger 
-import streamlit as st
-from config.config import load_config
-from page.about_us import display_about_us
-from page.home import display_home
-from page.data_exploration import display_data_exploration
-
-load_config()
-
-# Set page configuration as the first command
-st.set_page_config(
-    page_title="Journify",
-    page_icon=":shield:",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 st.sidebar.image("Journify/resource/journify.png")
 st.sidebar.header("How to use Journify")
 
