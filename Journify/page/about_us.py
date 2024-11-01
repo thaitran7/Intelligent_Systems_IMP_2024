@@ -148,7 +148,7 @@ def display_about_us():
     html_content += "<div class='row'>"
     html_content += """
         <div class='col'>
-            <img src="Journify/resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
+            <img src="/absolute/path/to/Intelligent_Systems_IMP_2024/Journify/resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
         </div>
         <div class='col'>
             <img src="Journify/resource/hcmut_logo.png" alt="Bach Khoa University Logo" width="150">
