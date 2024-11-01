@@ -1,5 +1,12 @@
 import streamlit as st
 
+# Set page configuration as the first command
+st.set_page_config(
+    page_title="Journify",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Define a function to display the "About Us" section
 def display_about_us():
     # Team member data
@@ -8,34 +15,34 @@ def display_about_us():
             "name": "Huỳnh Thanh Tân",
             "role": "Machine Learning Developer",
             "id": "2392019",
-            "email": "httan.sdh241@hcmut.edu.vn",
+            "email": "mailto:httan.sdh241@hcmut.edu.vn",
             "contribution": "Developed advanced NLP algorithms to enhance recommendation precision for the Intelligent Article Explorer."
         },
         {
             "name": "Trần Quốc Thái",
             "role": "Data Developer",
             "id": "2370759",
-            "email": "tqthai.sdh232@hcmut.edu.vn",
+            "email": "mailto:tqthai.sdh232@hcmut.edu.vn",
             "contribution": "Engineered scalable data infrastructure, ensuring reliable performance and seamless data processing."
         },
         {
             "name": "Trần Vũ Hồng Thiên",
             "role": "Machine Learning Developer",
             "id": "2370303",
-            "email": "tvhthien.sdh231@hcmut.edu.vn",
+            "email": "mailto:tvhthien.sdh231@hcmut.edu.vn",
             "contribution": "Designed and optimized ML models, improving the efficiency and accuracy of recommendation features."
         },
         {
             "name": "Rehman Ibtasam",
             "role": "Data Developer",
             "id": "2370300",
-            "email": "ribtasam.sdh231@hcmut.edu.vn",
+            "email": "mailto:ribtasam.sdh231@hcmut.edu.vn",
             "contribution": "Developed user-friendly interfaces, providing a seamless experience for data visualization and exploration."
         }
     ]
 
-    # CSS for styling
-    css_content = """
+    # CSS and HTML for team member cards
+    html_content = """
     <style>
         body {
             background-color: #ffffff;
@@ -130,32 +137,28 @@ def display_about_us():
         }
     </style>
     """
-    
-    # Inject CSS
-    st.markdown(css_content, unsafe_allow_html=True)
-
     # About Journify section
     st.markdown("### About Journify")
-
+    
     # Create a two-column layout for the images
     col1, col2 = st.columns(2)
-
+    
     with col1:
         st.image("Journify/resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=150)
-
+        
     with col2:
         st.image("Journify/resource/hcmut_logo.jpg", caption="Bach Khoa University Logo", width=150)
-
+    
     # Additional information
     st.markdown("<p><strong>Course:</strong> Intelligent Systems</p>", unsafe_allow_html=True)
     st.markdown("<p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>", unsafe_allow_html=True)
     st.markdown("<p><strong>Email:</strong> <a href='mailto:qttho@hcmut.edu.vn'>qttho@hcmut.edu.vn</a></p>", unsafe_allow_html=True)
+    st.markdown("### Project Contributors")
     
-    # Team members container
-    st.markdown("<div class='container'>", unsafe_allow_html=True)
+    <div class='container'>
+    """
 
     # Generate HTML for each team member in two-member rows
-    html_content = ""
     for i in range(0, len(team_members), 2):
         html_content += "<div class='row'>"
         for member in team_members[i:i+2]:
@@ -166,7 +169,7 @@ def display_about_us():
                 <p><strong>{member["role"]}</strong></p>
                 <p>{member["contribution"]}</p>
                 <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:{member["email"]}">{member["email"]}</a></p>
+                    <p><strong>Email:</strong> <a href="{member["email"]}">{member["email"].replace("mailto:", "")}</a></p>
                 </div>
             </div>
             """
@@ -183,7 +186,6 @@ def display_about_us():
     <p style="text-align: center; color: #555;">© 2024 Intelligent Article Explorer. All rights reserved.</p>
     """
 
-    # Render the HTML content
     st.components.v1.html(html_content, height=1200)
 
 # Run the function to display the About Us section
