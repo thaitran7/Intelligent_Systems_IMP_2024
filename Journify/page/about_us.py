@@ -136,31 +136,26 @@ def display_about_us():
             color: #555;
         }
     </style>
-    """
 
-    # Start assembling the full HTML content
-    html_content = css_content + "<div class='container'>"
-    
     # About Journify section
-    html_content += "<h3>About Journify</h3>"
-    
+    st.markdown("### About Journify")
+
     # Create a two-column layout for the images
-    html_content += "<div class='row'>"
-    html_content += """
-        <div class='col'>
-            <img src="/absolute/path/to/Intelligent_Systems_IMP_2024/Journify/resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
-        </div>
-        <div class='col'>
-            <img src="Journify/resource/hcmut_logo.png" alt="Bach Khoa University Logo" width="150">
-        </div>
-    </div>
-    """
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.image("Journify/resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=150)
+
+    with col2:
+        st.image("Journify/resource/hcmut_logo.png", caption="Bach Khoa University Logo", width=150)
 
     # Additional information
-    html_content += "<p><strong>Course:</strong> Intelligent Systems</p>"
-    html_content += "<p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>"
-    html_content += "<p><strong>Email:</strong> <a href='mailto:qttho@hcmut.edu.vn'>qttho@hcmut.edu.vn</a></p>"
-    html_content += "<h3>Project Contributors</h3>"
+    st.markdown("<p><strong>Course:</strong> Intelligent Systems</p>", unsafe_allow_html=True)
+    st.markdown("<p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>", unsafe_allow_html=True)
+    st.markdown("<p><strong>Email:</strong> <a href='mailto:qttho@hcmut.edu.vn'>qttho@hcmut.edu.vn</a></p>", unsafe_allow_html=True)
+    
+    # Team members container
+    st.markdown("<div class='container'>", unsafe_allow_html=True)
 
     # Generate HTML for each team member in two-member rows
     for i in range(0, len(team_members), 2):
