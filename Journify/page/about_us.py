@@ -1,156 +1,140 @@
 import streamlit as st
 from streamlit.components.v1 import html
-import pandas as pd
 
 # Define a function to display the "About Us" section
 def display_about_us():
-    # Team member data
+    # Team member data with refined project contributions and linked emails
     team_members = [
         {
             "name": "Huỳnh Thanh Tân",
             "role": "Machine Learning Developer",
-            "bio": "Tân has 1 year of experience in data science and specializes in NLP and recommendation systems.",
+            "id": "2392019",
+            "email": "mailto:httan.sdh241@hcmut.edu.vn",
+            "contribution": "Developed advanced NLP algorithms to enhance recommendation precision for the Intelligent Article Explorer."
         },
         {
             "name": "Trần Quốc Thái",
             "role": "Data Developer",
-            "bio": "Thái is a data wizard who ensures our systems run smoothly and efficiently with scalable infrastructure.",
+            "id": "2370759",
+            "email": "mailto:tqthai.sdh232@hcmut.edu.vn",
+            "contribution": "Engineered scalable data infrastructure, ensuring reliable performance and seamless data processing."
         },
         {
             "name": "Trần Vũ Hồng Thiên",
             "role": "Machine Learning Developer",
-            "bio": "With a deep passion for machine learning, Thiên focuses on developing robust models for recommendations.",
+            "id": "2370303",
+            "email": "mailto:tvhthien.sdh231@hcmut.edu.vn",
+            "contribution": "Designed and optimized ML models, improving the efficiency and accuracy of recommendation features."
         },
         {
             "name": "Rehman Ibtasam",
             "role": "Data Developer",
-            "bio": "Ibtasam designs intuitive and visually appealing data interfaces to make the Journify experience seamless.",
+            "id": "2370300",
+            "email": "mailto:ribtasam.sdh231@hcmut.edu.vn",
+            "contribution": "Developed user-friendly interfaces, providing a seamless experience for data visualization and exploration."
         }
     ]
 
     # CSS and HTML for team member cards and additional information
     html_content = """
     <style>
-        /* Container styling */
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
-            padding: 30px;
-            width: 100%;
+            gap: 20px;
+            padding: 20px;
         }
-
-        /* Row styling */
         .row {
             display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            gap: 30px;
             justify-content: center;
             width: 100%;
+            flex-wrap: wrap;
         }
-
-        /* Team member profile card styling */
         .profile-card {
-            background: #f5f7f9;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            background: #f9f9f9;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: 0.3s ease;
             width: 280px;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
-            transition: 0.3s;
+            font-family: Arial, sans-serif;
         }
         .profile-card:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
         }
         .profile-card h3 {
-            margin-top: 15px;
-            color: #34495e;
-            font-size: 1.6em;
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #333;
         }
         .profile-card p {
+            color: #555;
             font-size: 1em;
-            color: #7f8c8d;
-            line-height: 1.5;
+            margin: 5px 0;
+            line-height: 1.5em;
         }
-
-        /* Course Information and Links section */
+        .profile-card .contact-info {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
         .info-section {
-            font-family: Arial, sans-serif;
             text-align: center;
-            margin: 40px 0 20px;
-            color: #2c3e50;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
         }
         .info-section h3 {
             font-size: 1.8em;
-            color: #2980b9;
+            margin-bottom: 5px;
         }
-        .info-section p, .info-section a {
+        .info-section p {
             font-size: 1em;
-            color: #2c3e50;
-        }
-        .info-section a:hover {
-            color: #2980b9;
-            text-decoration: underline;
+            color: #555;
         }
     </style>
     
     <div class="info-section">
-        <h3>About Intelligent Article Explorer</h3>
-        <p>Welcome to the Intelligent Article Explorer, developed as part of the Intelligent Systems course.</p>
+        <h3>Intelligent Article Explorer</h3>
         <p><strong>Course:</strong> Intelligent Systems</p>
         <p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>
         <p><strong>Email:</strong> <a href="mailto:qttho@hcmut.edu.vn">qttho@hcmut.edu.vn</a></p>
+        <h3>Project Contributors</h3>
     </div>
-
+    
     <!-- Team Member Cards -->
     <div class='container'>
-        <div class='row'>
     """
 
-    # Generate HTML for each team member card
-    for member in team_members:
-        html_content += f"""
+    # Generate HTML for each team member in two-member rows
+    for i in range(0, len(team_members), 2):
+        html_content += "<div class='row'>"
+        for member in team_members[i:i+2]:  # Two members per row
+            html_content += f"""
             <div class='profile-card'>
                 <h3>{member["name"]}</h3>
                 <p><strong>{member["role"]}</strong></p>
-                <p>{member["bio"]}</p>
+                <p>{member["contribution"]}</p>
+                <div class="contact-info">
+                    <p><strong>ID:</strong> {member["id"]}</p>
+                    <p><strong>Email:</strong> <a href="{member["email"]}">{member["email"].replace("mailto:", "")}</a></p>
+                </div>
             </div>
-        """
-    html_content += """
-        </div> <!-- Close row div -->
-    </div> <!-- Close container div -->
+            """
+        html_content += "</div>"  # Close the row div
+    html_content += "</div>"  # Close the container div
 
-    <!-- Additional Links Section -->
-    <div class="info-section">
-        <h3>Source Code & Support</h3>
-        <p><a href="#">GitHub Repository</a></p>
-        <p><a href="#">Support Us</a></p>
-    </div>
-    """
+    html(html_content, height=1200)
 
-    html(html_content, height=1000)
-
-# Display the page content
-st.title("About Us")
+# Display the about us page
 display_about_us()
-
-# Data table for additional contributor information
-st.markdown("### Project Contributors")
-contributors = {
-    "Name": ["Huỳnh Thanh Tân", "Trần Quốc Thái", "Trần Vũ Hồng Thiên", "Rehman Ibtasam"],
-    "Student ID": ["2392019", "2370759", "2370303", "2370300"],
-    "Contact": [
-        "httan.sdh241@hcmut.edu.vn",
-        "tqthai.sdh232@hcmut.edu.vn",
-        "tvhthien.sdh231@hcmut.edu.vn",
-        "ribtasam.sdh231@hcmut.edu.vn"
-    ]
-}
-df_contributors = pd.DataFrame(contributors)
-st.table(df_contributors)
-
-# Footer
-st.markdown("---")
-st.markdown("© 2024 Intelligent Article Explorer. All rights reserved.")
