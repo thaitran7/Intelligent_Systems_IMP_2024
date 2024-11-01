@@ -6,13 +6,6 @@ def load_image(image_file):
     with open(image_file, "rb") as file:
         return base64.b64encode(file.read()).decode()
 
-# Set page configuration as the first command
-st.set_page_config(
-    page_title="Journify",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 # Load images
 journify_logo = load_image("Journify/resource/journify_logo.png")
 hcmut_logo = load_image("Journify/resource/hcmut_logo.jpg")
