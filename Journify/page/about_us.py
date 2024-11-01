@@ -148,11 +148,11 @@ def display_about_us():
         <p><strong>Email:</strong> <a href="mailto:qttho@hcmut.edu.vn">qttho@hcmut.edu.vn</a></p>
         <h3>Project Contributors</h3>
     </div>
-
+    
     # Generate HTML for each team member in two-member rows
     for i in range(0, len(team_members), 2):
         html_content += "<div class='row'>"
-        for member in team_members[i:i+2]:
+        for member in team_members[i:i + 2]:
             html_content += f"""
             <div class='profile-card'>
                 <h3>{member["name"]}</h3>
@@ -166,6 +166,7 @@ def display_about_us():
             """
         html_content += "</div>"  # Close the row div
     html_content += "</div>"  # Close the container div
+
         
     # Footer
     html_content += """
