@@ -16,8 +16,12 @@ st.set_page_config(
 
 # Function to encode images to base64
 def load_image(image_file):
-    with open(image_file, "rb") as file:
-        return base64.b64encode(file.read()).decode()
+    try:
+        with open(image_file, "rb") as file:
+            return base64.b64encode(file.read()).decode()
+    except Exception as e:
+        st.error(f"Error loading image: {e}")
+        return None
 
 # Load images
 journify_logo = load_image("Journify/resource/journify_logo.png")
@@ -95,17 +99,19 @@ st.sidebar.markdown("---")
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-    🚀 <h2>Transforming Learning into Lifelong Growth</h2>
+    <h2>🚀 Transforming Learning into Lifelong Growth 🚀</h2>
     <strong>Journify</strong> is to support your journey toward academic excellence.<br> 
     <em>Join us in unlocking new possibilities through knowledge and innovation.</em>
     </div>
     """, unsafe_allow_html=True
 )
 
+st.sidebar.markdown("---")
+
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-        <h3>⭐ Explore, Learn, and Grow with Journify!</h3>
+        <h3>⭐ Explore, Learn, and Grow with Journify! ⭐</h3>
     </div>
     """, unsafe_allow_html=True
 )
@@ -119,7 +125,6 @@ st.sidebar.markdown(
     </div>
     """, unsafe_allow_html=True
 )
-
 
 st.sidebar.markdown("---")
 
