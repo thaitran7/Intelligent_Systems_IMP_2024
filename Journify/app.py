@@ -45,15 +45,22 @@ class MultiApp:
         self.apps.append({"title": title, "function": func})
 
     def run(self):
-        # Create a list of tab names from added apps
-        tab_titles = [app["title"] for app in self.apps]
-        # Create tabs using Streamlit's st.tabs
-        tabs = st.tabs(tab_titles)
+        # Sidebar menu for each added app
+        st.sidebar.markdown("## Main Menu")
+        selected_app = None
         
-        # Display each app's function in the corresponding tab
-        for i, app in enumerate(self.apps):
-            with tabs[i]:
-                app["function"]()
+        # Display each app title as a button in the sidebar
+        for app in self.apps:
+            if st.sidebar.button(app["title"]):
+                selected_app = app["function"]
+
+        st.sidebar.markdown("---")
+
+        # Display the selected app function (if any)
+        if selected_app:
+            selected_app()
+        else:
+            st.write("Select a page from the sidebar.")
 
 # Initialize the MultiApp instance
 app = MultiApp()
@@ -69,5 +76,5 @@ app.add_app("Query Database", display_data_exploration)  # Replace with actual f
 app.add_app("Classify Structures", display_data_exploration)  # Replace with actual function
 app.add_app("About Us", display_about_us)
 
-# Run the app to display tabs
+# Run the app
 app.run()
