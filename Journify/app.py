@@ -21,7 +21,7 @@ st.markdown(
     body {
         font-size: 18px;  /* Increase global font size */
     }
-    .sttabs {
+    .stTabs {
         font-size: 20px;  /* Increase tab font size */
         text-align: center; /* Center align the tabs */
     }
@@ -34,7 +34,6 @@ st.sidebar.image("Journify/resource/journify.png")
 st.sidebar.header("How to use Journify")
 
 st.sidebar.header("About")
-
 with st.sidebar:
     st.markdown(
         "Welcome to **Journify** (Intelligent Journal Explorer), an AI-powered platform designed to provide users with curated article recommendations and an intelligent Q&A chatbot for arXiv papers."
@@ -49,6 +48,7 @@ with st.sidebar:
         """
     )
     st.markdown("Created by the Journify Team.")
+    
     # Add "Star on GitHub" link to the sidebar
     st.sidebar.markdown(
         "⭐ Star on GitHub: [![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)](https://github.com/tan-nt/real-life-streamlit-app)"
@@ -94,12 +94,21 @@ with st.sidebar:
     Provide detailed queries and specify topics clearly. The more context you give, the more relevant and accurate the recommendations and responses from Journify will be.
     """
     )
-    
+
 # ------------------ Main App UI ------------------ #
-tab1, tab2, tab3, tab4 = st.tabs(["Home", "Article recommendation", "Data exploration", "About Us"])
+tab1, tab2, tab3, tab4 = st.tabs(["Home", "Article Recommendation", "Data Exploration", "About Us"])
+# Center the tabs by adding additional empty space
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space above the tabs
+
 with tab1:
     display_home()
+with tab2:
+    # Placeholder for article recommendation display function
+    pass  # Replace with display_article_recommendation() when it's defined
 with tab3:
     display_data_exploration()
 with tab4:
     display_about_us()
+
+# Optionally, you can add some space below the tabs as well
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds vertical space below the tabs
