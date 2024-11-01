@@ -169,6 +169,16 @@ def display_about_us():
             """
         html_content += "</div>"  # Close the row div
     html_content += "</div>"  # Close the container div
+        
+    # Footer
+    html_content += """
+    <div class="info-section">
+        <h3>Source Code & Support</h3>
+        <p><a href="#">GitHub Repository</a> | <a href="#">Support Us</a></p>
+    </div>
+    <hr>
+    <p style="text-align: center; color: #555;">© 2024 Intelligent Article Explorer. All rights reserved.</p>
+    """
 
     st.components.v1.html(html_content, height=1200)
 
