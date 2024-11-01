@@ -60,10 +60,18 @@ st.sidebar.markdown("</div>", unsafe_allow_html=True)
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-    <strong>🌱 Welcome to Journify 🌱</strong><br>
-    Your intelligent journal explorer powered by AI. Journify empowers researchers, students, and curious minds by providing:
-    🔍 <strong>Curated Article Recommendations</strong> across a wide range of topics.
-    🤖 <strong>AI-driven Q&A Chatbot</strong> for quick, accurate answers to your research questions.
+    <strong>🌱 Welcome to Journify 🌱</strong>
+    <div>
+    """, unsafe_allow_html=True
+)
+st.sidebar.markdown(
+    """
+    <div style='text-align: justify;'>
+    Your intelligent journal explorer powered by AI. Journify empowers scholars and curious minds by providing:
+    <ul>
+        <li>🔍 <strong>Curated Article Recommendations</strong> across a wide range of topics.</li>
+        <li>🤖 <strong>AI-driven Q&A Chatbot</strong> for quick, accurate answers to your research questions.</li>
+    </ul>
     </div>
     """, unsafe_allow_html=True
 )
@@ -75,20 +83,30 @@ st.sidebar.markdown(
     """
     <div style='text-align: center;'>
     🚀 <strong>Transforming Learning into Lifelong Growth</strong><br>
-    **Journify** is here to support you on your journey toward academic excellence. Join us in unlocking new possibilities through knowledge and innovation.
+    **Journify** is here to support you on your journey toward academic excellence.<br> 
+    <em>Join us in unlocking new possibilities through knowledge and innovation.</em>
     </div>
-    """
+    """, unsafe_allow_html=True
 )
 
-# Call to Action and Social Engagement
-st.sidebar.markdown("#### ⭐ Explore, Learn, and Grow with Journify!")
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-    [![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)](https://github.com/tan-nt/real-life-streamlit-app)
+        <strong>⭐ Explore, Learn, and Grow with Journify!</strong>
     </div>
-    """
+    """, unsafe_allow_html=True
 )
+
+st.sidebar.markdown(
+    """
+    <div style='text-align: center;'>
+        <a href="https://github.com/tan-nt/real-life-streamlit-app">
+            <img src="https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social" alt="Star on GitHub">
+        </a>
+    </div>
+    """, unsafe_allow_html=True
+)
+
 
 st.sidebar.markdown("---")
 
