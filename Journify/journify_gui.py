@@ -2,9 +2,9 @@ import base64
 import streamlit as st
 from PIL import Image
 from config.config import load_config
-from pages.about_us import about_us_page
-from pages.home import home_page
-from pages.trendings import trendings_page
+from pages.about_us_page import about_us_page
+from pages.home_page import home_page
+from pages.trendings_page import trendings_page
 
 # Set page configuration as the first command
 st.set_page_config(
