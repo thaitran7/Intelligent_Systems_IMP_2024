@@ -22,7 +22,7 @@ st.markdown(
         font-size: 18px;  /* Increase global font size */
     }
     .stTabs {
-        font-size: 20px;  /* Increase tab font size */
+        font-size: 50px;  /* Increase tab font size */
         text-align: center; /* Center align the tabs */
     }
     </style>
