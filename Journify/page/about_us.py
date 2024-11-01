@@ -140,8 +140,8 @@ def display_about_us():
     <div class="info-section">
         <h3>About Journify</h3>
         <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
-            <img src="./resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
-            <img src="./resource/hcmut_logo.jpg" alt="Bach Khoa University Logo" width="150">
+            <img src="../resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
+            <img src="../resource/hcmut_logo.jpg" alt="Bach Khoa University Logo" width="150">
         </div>
         <p><strong>Course:</strong> Intelligent Systems</p>
         <p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>
@@ -151,8 +151,6 @@ def display_about_us():
     
     <div class='container'>
     """
-
-    st.image("./resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=150)
 
     # Generate HTML for each team member in two-member rows
     for i in range(0, len(team_members), 2):
