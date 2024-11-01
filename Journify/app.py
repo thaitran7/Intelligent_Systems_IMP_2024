@@ -25,13 +25,13 @@ class MultiApp:
 
     def run(self):
         # Sidebar for selecting the app
-        st.sidebar.markdown("## Main Menu")
+        st.sidebar.markdown("<h2 style='text-align: center;'>Main Menu</h2>", unsafe_allow_html=True)
         
-        # Selectbox for navigation
+        # Selectbox for navigation with a centered title
         app = st.sidebar.selectbox(
             "Select Page", self.apps, format_func=lambda app: app["title"]
         )
-        st.sidebar.markdown("---")
+        st.sidebar.markdown("<hr style='border: 1px solid #d3d3d3;'>", unsafe_allow_html=True)
         
         # Display the selected page content
         app["function"]()
@@ -51,33 +51,51 @@ app.add_app("About Us", display_about_us)
 # Run the application
 app.run()
 
-# Display a smaller logo with a width setting
-st.sidebar.image("Journify/resource/journify_logo.png", width=150)
+# Display a centered and smaller logo
+st.sidebar.markdown(
+    "<div style='text-align: center;'>"
+    "<img src='Journify/resource/journify_logo.png' width='120' alt='Journify Logo'>"
+    "</div>",
+    unsafe_allow_html=True
+)
 
-# Brief, engaging description
+# Add a brief, engaging description with interactive styles
 st.sidebar.markdown(
     """
-    **Welcome to Journify**, your intelligent journal explorer powered by AI. Journify is crafted to 
-    empower researchers, students, and curious minds by providing:
-    - **Curated article recommendations** for deep insights across a range of topics.
-    - An **AI-driven Q&A chatbot** designed to answer your research questions quickly and accurately.
+    <div style="padding: 15px; text-align: center; border-radius: 10px; background-color: #f0f0f0;">
+    <strong>Welcome to Journify</strong>, your intelligent journal explorer powered by AI.<br><br>
+    Journify empowers researchers, students, and curious minds by providing:<br>
+    <ul style="text-align: left;">
+        <li>Curated article recommendations for deep insights across topics.</li>
+        <li>An AI-driven Q&A chatbot to answer research questions quickly.</li>
+    </ul>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Add a motivational call-to-action and slogan
+st.sidebar.markdown(
+    """
+    <div style="text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold;">
+    ⭐ Explore, Learn, and Grow with Journify!
+    </div>
     """
 )
 
-st.sidebar.markdown("---")
-
+# Call-to-action to support Journify on GitHub with a clickable button
 st.sidebar.markdown(
     """
-    Join us in turning learning into growth and unlock new possibilities with **Journify**.
-    """
+    <div style="text-align: center; margin-top: 20px;">
+    <a href="https://github.com/tan-nt/real-life-streamlit-app" target="_blank">
+        <button style="background-color: #ff4b4b; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1em;">
+            Star on GitHub
+        </button>
+    </a>
+    </div>
+    """,
+    unsafe_allow_html=True
 )
 
-# Add a call to action for engagement
-st.sidebar.markdown("#### ⭐ Explore, Learn, and Grow with Journify!")
-st.sidebar.markdown(
-    "Support us by starring on GitHub: "
-    "[![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)]"
-    "(https://github.com/tan-nt/real-life-streamlit-app)"
-)
-
-
+# Separator line for structure
+st.sidebar.markdown("<hr style='border: 1px solid #d3d3d3;'>", unsafe_allow_html=True)
