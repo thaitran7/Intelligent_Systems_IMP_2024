@@ -45,7 +45,7 @@ def display_about_us():
     html_content = """
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #ffffff;  /* Set background to white */
             font-family: Arial, sans-serif;
         }
         .container {
@@ -63,7 +63,7 @@ def display_about_us():
             flex-wrap: wrap;
         }
         .profile-card {
-            background: #ffffff;
+            background: #ffffff;  /* Ensure card background is white */
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -140,8 +140,8 @@ def display_about_us():
     <div class="info-section">
         <h3>About Journify</h3>
         <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
-            <img src="Journify/resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
-            <img src="Journify/resource/journify_logo.png" alt="Bach Khoa University Logo" width="150">
+            <img src="intelligent_article_explorer_logo.png" alt="Intelligent Article Explorer Logo" width="150">
+            <img src="bach_khoa_university_logo.png" alt="Bach Khoa University Logo" width="150">
         </div>
         <p><strong>Course:</strong> Intelligent Systems</p>
         <p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>
@@ -149,34 +149,26 @@ def display_about_us():
         <h3>Project Contributors</h3>
     </div>
     
+    <div class='container'>
+    """
+
     # Generate HTML for each team member in two-member rows
     for i in range(0, len(team_members), 2):
         html_content += "<div class='row'>"
-        for member in team_members[i:i + 2]:
+        for member in team_members[i:i+2]:
             html_content += f"""
             <div class='profile-card'>
                 <h3>{member["name"]}</h3>
-                <p><strong>ID:</strong> {member["id"]}</p>
                 <p><strong>{member["role"]}</strong></p>
                 <p>{member["contribution"]}</p>
                 <div class="contact-info">
+                    <p><strong>ID:</strong> {member["id"]}</p>
                     <p><strong>Email:</strong> <a href="{member["email"]}">{member["email"].replace("mailto:", "")}</a></p>
                 </div>
             </div>
             """
         html_content += "</div>"  # Close the row div
     html_content += "</div>"  # Close the container div
-
-        
-    # Footer
-    html_content += """
-    <div class="info-section">
-        <h3>Source Code & Support</h3>
-        <p><a href="#">GitHub Repository</a> | <a href="#">Support Us</a></p>
-    </div>
-    <hr>
-    <p style="text-align: center; color: #555;">© 2024 Intelligent Article Explorer. All rights reserved.</p>
-    """
 
     st.components.v1.html(html_content, height=1200)
 
