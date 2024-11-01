@@ -1,7 +1,7 @@
 import streamlit as st
 from ai_model import knn
 
-def display_home():
+def search_page():
     col1, col2, col3 = st.columns(3)
     with col1:
         st.write(' ')
