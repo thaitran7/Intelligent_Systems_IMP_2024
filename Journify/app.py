@@ -14,6 +14,22 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Custom CSS to increase font size for the entire app and specifically for the tabs
+st.markdown(
+    """
+    <style>
+    body {
+        font-size: 18px;  /* Increase global font size */
+    }
+    .stTabs {
+        font-size: 20px;  /* Increase tab font size */
+        text-align: center; /* Center align the tabs */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.sidebar.image("Journify/resource/journify.png")
 st.sidebar.header("How to use Journify")
 
