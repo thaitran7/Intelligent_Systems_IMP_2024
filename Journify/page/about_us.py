@@ -136,7 +136,7 @@ def display_about_us():
             color: #555;
         }
     </style>
-    """
+    
     # About Journify section
     st.markdown("### About Journify")
     
@@ -156,7 +156,6 @@ def display_about_us():
     st.markdown("### Project Contributors")
     
     <div class='container'>
-    """
 
     # Generate HTML for each team member in two-member rows
     for i in range(0, len(team_members), 2):
