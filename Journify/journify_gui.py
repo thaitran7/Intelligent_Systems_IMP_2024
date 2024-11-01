@@ -2,6 +2,7 @@ import base64
 import streamlit as st
 from PIL import Image
 from config.config import load_config
+from pages.search_page import search_page
 from pages.about_us_page import about_us_page
 from pages.home_page import home_page
 from pages.trendings_page import trendings_page
