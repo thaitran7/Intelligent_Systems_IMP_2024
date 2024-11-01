@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Display data exploration in tab3
-def display_data_exploration():
+def trendings_page():
     data = article.read_articles()  # Load data into a DataFrame
     df = pd.DataFrame(data)
 
