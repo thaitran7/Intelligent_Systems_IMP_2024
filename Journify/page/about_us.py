@@ -14,8 +14,8 @@ st.set_page_config(
 )
 
 # Load images
-journify_logo = load_image("journify_logo.png")
-hcmut_logo = load_image("../resource/hcmut_logo.jpg")
+journify_logo = load_image("Journify/resource/journify_logo.png")
+hcmut_logo = load_image("Journify/resource/hcmut_logo.jpg")
 
 # Define a function to display the "About Us" section
 def display_about_us():
