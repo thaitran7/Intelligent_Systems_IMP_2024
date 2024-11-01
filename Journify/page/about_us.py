@@ -1,5 +1,5 @@
-import streamlit as st
 import base64
+import streamlit as st
 
 # Set page configuration as the first command
 st.set_page_config(
@@ -8,10 +8,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Function to convert image to base64
+# Function to load an image and convert it to base64
 def load_image(image_path):
     with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode('utf-8')
+        return base64.b64encode(image_file.read()).decode()
+
+# Load the images
+journify_logo = load_image("../resource/journify_logo.png")
+hcmut_logo = load_image("../resource/hcmut_logo.jpg")
 
 # Define a function to display the "About Us" section
 def display_about_us():
@@ -47,32 +51,28 @@ def display_about_us():
         }
     ]
 
-    # Load images
-    journify_logo = load_image("journify_logo.png")  # Ensure correct path
-    hcmut_logo = load_image("../resource/hcmut_logo.jpg")  # Ensure correct path
-
     # CSS and HTML for team member cards
-    html_content = f"""
+    html_content = """
     <style>
-        body {{
+        body {
             background-color: #ffffff;  /* Set background to white */
             font-family: Arial, sans-serif;
-        }}
-        .container {{
+        }
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
             padding: 20px;
-        }}
-        .row {{
+        }
+        .row {
             display: flex;
             gap: 30px;
             justify-content: center;
             width: 100%;
             flex-wrap: wrap;
-        }}
-        .profile-card {{
+        }
+        .profile-card {
             background: #ffffff;  /* Ensure card background is white */
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -83,13 +83,13 @@ def display_about_us():
             text-align: center;
             position: relative;
             border: 2px solid transparent;
-        }}
-        .profile-card:hover {{
+        }
+        .profile-card:hover {
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
             transform: translateY(-5px);
             border-color: #3498db;
-        }}
-        .profile-card::before {{
+        }
+        .profile-card::before {
             content: "";
             position: absolute;
             top: 0;
@@ -101,50 +101,50 @@ def display_about_us():
             transition: transform 0.3s ease;
             border-radius: 15px;
             transform: translateX(-50%);
-        }}
-        .profile-card h3 {{
+        }
+        .profile-card h3 {
             margin: 10px 0;
             font-size: 1.5em;
             color: #333;
             position: relative;
             z-index: 1;
-        }}
-        .profile-card p {{
+        }
+        .profile-card p {
             color: #555;
             font-size: 1em;
             margin: 5px 0;
             line-height: 1.5em;
             position: relative;
             z-index: 1;
-        }}
-        .profile-card .contact-info {{
+        }
+        .profile-card .contact-info {
             margin-top: 10px;
             font-size: 0.9em;
-        }}
-        .contact-info a {{
+        }
+        .contact-info a {
             color: #3498db;
             text-decoration: none;
             position: relative;
             z-index: 1;
             transition: color 0.3s ease;
-        }}
-        .contact-info a:hover {{
+        }
+        .contact-info a:hover {
             color: #2980b9;
             text-decoration: underline;
-        }}
-        .info-section {{
+        }
+        .info-section {
             text-align: center;
             font-family: Arial, sans-serif;
             margin-top: 20px;
-        }}
-        .info-section h3 {{
+        }
+        .info-section h3 {
             font-size: 1.8em;
             margin-bottom: 5px;
-        }}
-        .info-section p {{
+        }
+        .info-section p {
             font-size: 1em;
             color: #555;
-        }}
+        }
     </style>
     
     <div class="info-section">
