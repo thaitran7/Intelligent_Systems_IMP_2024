@@ -1,3 +1,11 @@
+# Set page configuration as the first command
+st.set_page_config(
+    page_title="Journify",
+    page_icon=":shield:",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 import base64
 import streamlit as st
 from PIL import Image
@@ -15,14 +23,6 @@ def load_image(image_file):
 journify_logo = load_image("Journify/resource/journify_logo.png")
 
 load_config()
-
-# Set page configuration as the first command
-st.set_page_config(
-    page_title="Journify",
-    page_icon=":shield:",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # ------------------ Main App UI ------------------ #
 class MultiApp:
