@@ -59,11 +59,13 @@ st.sidebar.markdown("</div>", unsafe_allow_html=True)
 # Brief, engaging description with emojis and enhanced formatting
 st.sidebar.markdown(
     """
-    **Welcome to Journify** 🌱  
+    <div style='text-align: center;'>
+    <strong>🌱 Welcome to Journify 🌱</strong><br>
     Your intelligent journal explorer powered by AI. Journify empowers researchers, students, and curious minds by providing:
-    - 🔍 **Curated Article Recommendations** across a wide range of topics.
-    - 🤖 **AI-driven Q&A Chatbot** for quick, accurate answers to your research questions.
-    """
+    🔍 <strong>Curated Article Recommendations</strong> across a wide range of topics.
+    🤖 <strong>AI-driven Q&A Chatbot</strong> for quick, accurate answers to your research questions.
+    </div>
+    """, unsafe_allow_html=True
 )
 
 st.sidebar.markdown("---")
@@ -71,8 +73,10 @@ st.sidebar.markdown("---")
 # Vision and Mission Statement
 st.sidebar.markdown(
     """
-    🚀 **Transforming Learning into Lifelong Growth**  
-    Journify is here to support you on your journey toward academic excellence. Join us in unlocking new possibilities through knowledge and innovation.
+    <div style='text-align: center;'>
+    🚀 <strong>Transforming Learning into Lifelong Growth</strong><br>
+    **Journify** is here to support you on your journey toward academic excellence. Join us in unlocking new possibilities through knowledge and innovation.
+    </div>
     """
 )
 
@@ -80,7 +84,9 @@ st.sidebar.markdown(
 st.sidebar.markdown("#### ⭐ Explore, Learn, and Grow with Journify!")
 st.sidebar.markdown(
     """
+    <div style='text-align: center;'>
     [![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)](https://github.com/tan-nt/real-life-streamlit-app)
+    </div>
     """
 )
 
