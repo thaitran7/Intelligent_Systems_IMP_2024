@@ -51,8 +51,6 @@ app.add_app("About Us", display_about_us)
 # Run the application
 app.run()
 
-st.sidebar.markdown("---")
-
 # Display a smaller logo with a width setting
 st.sidebar.image("Journify/resource/journify_logo.png", width=150)
 
