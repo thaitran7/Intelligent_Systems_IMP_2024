@@ -11,7 +11,8 @@ from pages.trendings_page import trendings_page
 st.set_page_config(
     page_title="Journify",
     page_icon=":shield:",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 load_config()
@@ -37,8 +38,6 @@ class MultiApp:
         self.apps.append({"title": title, "function": func})
 
     def run(self):
-        # Sidebar for selecting the app
-        st.sidebar.markdown("## Main Menu")
         
         # Selectbox for navigation
         app = st.sidebar.selectbox(
