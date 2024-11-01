@@ -5,6 +5,14 @@ from page.about_us import display_about_us
 from page.home import display_home
 from page.data_exploration import display_data_exploration
 
+# Function to encode images to base64
+def load_image(image_file):
+    with open(image_file, "rb") as file:
+        return base64.b64encode(file.read()).decode()
+
+# Load images
+journify_logo = load_image("Journify/resource/journify_logo.png")
+
 load_config()
 
 # Set page configuration as the first command
@@ -14,13 +22,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-# Function to encode images to base64
-def load_image(image_file):
-    with open(image_file, "rb") as file:
-        return base64.b64encode(file.read()).decode()
-
-# Load images
-journify_logo = load_image("Journify/resource/journify_logo.png")
 
 # ------------------ Main App UI ------------------ #
 class MultiApp:
