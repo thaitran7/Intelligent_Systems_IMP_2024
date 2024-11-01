@@ -45,7 +45,7 @@ def display_about_us():
     html_content = """
     <style>
         body {
-            background-color: #f0f4f8;
+            background-color: #ffffff;
             font-family: Arial, sans-serif;
         }
         .container {
