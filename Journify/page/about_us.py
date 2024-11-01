@@ -38,6 +38,10 @@ def display_about_us():
     # CSS and HTML for team member cards and additional information
     html_content = """
     <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
         .container {
             display: flex;
             flex-direction: column;
@@ -53,30 +57,49 @@ def display_about_us():
             flex-wrap: wrap;
         }
         .profile-card {
-            background: #f9f9f9;
+            background: #ffffff;
             border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            transition: 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: 280px;
             padding: 20px;
             text-align: center;
-            font-family: Arial, sans-serif;
+            position: relative;
+            border: 2px solid transparent;
         }
         .profile-card:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
             transform: translateY(-5px);
+            border-color: #3498db; /* Highlight border on hover */
+        }
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
+            z-index: 0;
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            transform: translateX(-50%);
         }
         .profile-card h3 {
             margin: 10px 0;
             font-size: 1.5em;
             color: #333;
+            position: relative;
+            z-index: 1; /* Above the gradient background */
         }
         .profile-card p {
             color: #555;
             font-size: 1em;
             margin: 5px 0;
             line-height: 1.5em;
+            position: relative;
+            z-index: 1; /* Above the gradient background */
         }
         .profile-card .contact-info {
             margin-top: 10px;
@@ -85,8 +108,12 @@ def display_about_us():
         .contact-info a {
             color: #3498db;
             text-decoration: none;
+            position: relative;
+            z-index: 1; /* Above the gradient background */
+            transition: color 0.3s ease;
         }
         .contact-info a:hover {
+            color: #2980b9; /* Darker shade on hover */
             text-decoration: underline;
         }
         .info-section {
@@ -105,7 +132,11 @@ def display_about_us():
     </style>
     
     <div class="info-section">
-        <h3>Intelligent Article Explorer</h3>
+        <h3>About Journify</h3>
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+            <img src="intelligent_article_explorer_logo.png" alt="Intelligent Article Explorer Logo" width="150">
+            <img src="bach_khoa_university_logo.png" alt="Bach Khoa University Logo" width="150">
+        </div>
         <p><strong>Course:</strong> Intelligent Systems</p>
         <p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>
         <p><strong>Email:</strong> <a href="mailto:qttho@hcmut.edu.vn">qttho@hcmut.edu.vn</a></p>
