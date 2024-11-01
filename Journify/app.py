@@ -14,6 +14,13 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# Function to encode images to base64
+def load_image(image_file):
+    with open(image_file, "rb") as file:
+        return base64.b64encode(file.read()).decode()
+
+# Load images
+journify_logo = load_image("Journify/resource/journify_logo.png")
 
 # ------------------ Main App UI ------------------ #
 class MultiApp:
@@ -52,9 +59,13 @@ app.add_app("About Us", display_about_us)
 app.run()
 
 # Centered Logo and Additional Sidebar Content
-st.sidebar.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-st.sidebar.image("Journify/resource/journify_logo.png", width=120)
-st.sidebar.markdown("</div>", unsafe_allow_html=True)
+st.sidebar.markdown(
+    """
+    <div style='display: flex; justify-content: center;'>
+    <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="150">
+    </div>
+    """
+)
 
 # Brief, engaging description with emojis and enhanced formatting
 st.sidebar.markdown(
