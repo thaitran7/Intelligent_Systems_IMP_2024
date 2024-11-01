@@ -140,8 +140,8 @@ def display_about_us():
     <div class="info-section">
         <h3>About Journify</h3>
         <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
-            <img src="intelligent_article_explorer_logo.png" alt="Intelligent Article Explorer Logo" width="150">
-            <img src="bach_khoa_university_logo.png" alt="Bach Khoa University Logo" width="150">
+            <img src="Journify/resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
+            <img src="Journify/resource/hcmut_logo.png" alt="Bach Khoa University Logo" width="150">
         </div>
         <p><strong>Course:</strong> Intelligent Systems</p>
         <p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>
