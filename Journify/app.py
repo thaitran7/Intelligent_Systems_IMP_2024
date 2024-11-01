@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.sidebar.image("Journify/resource/journify.png")
+st.sidebar.image("Journify/resource/journify_logo.png")
 st.sidebar.header("How to use Journify")
 
 st.sidebar.header("About")
