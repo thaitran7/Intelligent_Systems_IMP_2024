@@ -70,7 +70,7 @@ if journify_logo is None:
 else:
     st.sidebar.markdown(
         """
-        <div style="display: flex; justify-content: center; gap: 50px; margin: 20px 0;">
+        <div style="display: flex; justify-content: center; gap: 20px; margin: 10px 0;">
             <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="200">
         </div>
         """.format(journify_logo=journify_logo), 
