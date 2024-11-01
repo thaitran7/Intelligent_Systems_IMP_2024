@@ -137,17 +137,23 @@ def display_about_us():
         }
     </style>
     
-    <div class="info-section">
-        <h3>About Journify</h3>
-        <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
-            <img src="Journify/resource/journify_logo.png" alt="Intelligent Article Explorer Logo" width="150">
-            <img src="Journify/resource/journify_logo.png" alt="Bach Khoa University Logo" width="150">
-        </div>
-        <p><strong>Course:</strong> Intelligent Systems</p>
-        <p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>
-        <p><strong>Email:</strong> <a href="mailto:qttho@hcmut.edu.vn">qttho@hcmut.edu.vn</a></p>
-        <h3>Project Contributors</h3>
-    </div>
+    # About Journify section
+    st.markdown("### About Journify")
+    
+    # Create a two-column layout for the images
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.image("Journify/resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=150)
+        
+    with col2:
+        st.image("Journify/resource/hcmut_logo.png", caption="Bach Khoa University Logo", width=150)
+    
+    # Additional information
+    st.markdown("<p><strong>Course:</strong> Intelligent Systems</p>", unsafe_allow_html=True)
+    st.markdown("<p><strong>Instructor:</strong> Assoc. Prof. Quản Thành Thơ</p>", unsafe_allow_html=True)
+    st.markdown("<p><strong>Email:</strong> <a href='mailto:qttho@hcmut.edu.vn'>qttho@hcmut.edu.vn</a></p>", unsafe_allow_html=True)
+    st.markdown("### Project Contributors")
     
     <div class='container'>
     """
