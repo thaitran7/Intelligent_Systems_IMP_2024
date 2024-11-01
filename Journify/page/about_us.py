@@ -1,12 +1,5 @@
 import streamlit as st
 
-# Set page configuration as the first command
-st.set_page_config(
-    page_title="Journify",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 # Define a function to display the "About Us" section
 def display_about_us():
     # Team member data
@@ -136,6 +129,10 @@ def display_about_us():
             color: #555;
         }
     </style>
+    """
+
+    # Apply CSS
+    st.markdown(css_content, unsafe_allow_html=True)
 
     # About Journify section
     st.markdown("### About Journify")
@@ -158,6 +155,7 @@ def display_about_us():
     st.markdown("<div class='container'>", unsafe_allow_html=True)
 
     # Generate HTML for each team member in two-member rows
+    html_content = ""
     for i in range(0, len(team_members), 2):
         html_content += "<div class='row'>"
         for member in team_members[i:i+2]:
