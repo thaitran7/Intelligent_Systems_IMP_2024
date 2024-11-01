@@ -15,34 +15,34 @@ def display_about_us():
             "name": "Huỳnh Thanh Tân",
             "role": "Machine Learning Developer",
             "id": "2392019",
-            "email": "mailto:httan.sdh241@hcmut.edu.vn",
+            "email": "httan.sdh241@hcmut.edu.vn",
             "contribution": "Developed advanced NLP algorithms to enhance recommendation precision for the Intelligent Article Explorer."
         },
         {
             "name": "Trần Quốc Thái",
             "role": "Data Developer",
             "id": "2370759",
-            "email": "mailto:tqthai.sdh232@hcmut.edu.vn",
+            "email": "tqthai.sdh232@hcmut.edu.vn",
             "contribution": "Engineered scalable data infrastructure, ensuring reliable performance and seamless data processing."
         },
         {
             "name": "Trần Vũ Hồng Thiên",
             "role": "Machine Learning Developer",
             "id": "2370303",
-            "email": "mailto:tvhthien.sdh231@hcmut.edu.vn",
+            "email": "tvhthien.sdh231@hcmut.edu.vn",
             "contribution": "Designed and optimized ML models, improving the efficiency and accuracy of recommendation features."
         },
         {
             "name": "Rehman Ibtasam",
             "role": "Data Developer",
             "id": "2370300",
-            "email": "mailto:ribtasam.sdh231@hcmut.edu.vn",
+            "email": "ribtasam.sdh231@hcmut.edu.vn",
             "contribution": "Developed user-friendly interfaces, providing a seamless experience for data visualization and exploration."
         }
     ]
 
-    # CSS and HTML for team member cards
-    html_content = """
+    # CSS for styling
+    css_content = """
     <style>
         body {
             background-color: #ffffff;
@@ -136,8 +136,8 @@ def display_about_us():
             color: #555;
         }
     </style>
-    
     """
+
     # Start assembling the full HTML content
     html_content = css_content + "<div class='container'>"
     
@@ -173,7 +173,7 @@ def display_about_us():
                 <p><strong>{member["role"]}</strong></p>
                 <p>{member["contribution"]}</p>
                 <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="{member["email"]}">{member["email"].replace("mailto:", "")}</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:{member["email"]}">{member["email"]}</a></p>
                 </div>
             </div>
             """
@@ -190,6 +190,7 @@ def display_about_us():
     <p style="text-align: center; color: #555;">© 2024 Intelligent Article Explorer. All rights reserved.</p>
     """
 
+    # Render the HTML content
     st.components.v1.html(html_content, height=1200)
 
 # Run the function to display the About Us section
