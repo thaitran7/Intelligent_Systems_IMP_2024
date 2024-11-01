@@ -17,26 +17,8 @@ st.set_page_config(
 
 st.sidebar.image("Journify/resource/journify_logo.png")
 st.sidebar.header("How to use Journify")
-st.sidebar.header("About")
 
-# Sidebar content with some information about Journify
-with st.sidebar:
-    st.markdown("Welcome to **Journify** (Intelligent Journal Explorer), an AI-powered platform designed to provide users with curated article recommendations and an intelligent Q&A chatbot for arXiv papers.")
-    st.markdown("Created by the Journify Team.")
-    st.sidebar.markdown("⭐ Star on GitHub: [![Star on GitHub](https://img.shields.io/github/stars/tan-nt/real-life-streamlit-app?style=social)](https://github.com/tan-nt/real-life-streamlit-app)")
-    st.markdown("""---""")
-
-# FAQ section in the sidebar
-st.sidebar.header("FAQs")
-with st.sidebar:
-    st.markdown(
-        """
-    ### **What is Journify?**
-    Journify is an intelligent journal exploration tool designed to recommend the best articles and answer queries from arXiv using AI.
-    """
-    )
-
-# ------------------ MultiApp Structure with Tabs ------------------ #
+# ------------------ MultiApp Structure with Sidebar Buttons ------------------ #
 class MultiApp:
     def __init__(self):
         self.apps = []
