@@ -6,7 +6,7 @@ def display_home():
     with col1:
         st.write(' ')
     with col2:
-        st.image("Journify/resource/ArXiv_logo.png", width=40)
+        st.image("Journify/resource/ArXiv_logo.png", width=20)
     with col3:
         st.write(' ')
 
