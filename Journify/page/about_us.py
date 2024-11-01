@@ -131,7 +131,7 @@ def display_about_us():
         st.image("Journify/resource/journify_logo.png", caption="Intelligent Article Explorer Logo", width=150)
 
     with col2:
-        st.image("Journify/resource/hcmut_logo.png", caption="Bach Khoa University Logo", width=150)
+        st.image("Journify/resource/hcmut_logo.jpg", caption="Bach Khoa University Logo", width=150)
 
     # Additional information
     st.markdown("<p><strong>Course:</strong> Intelligent Systems</p>", unsafe_allow_html=True)
