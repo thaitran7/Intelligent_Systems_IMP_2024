@@ -1,3 +1,4 @@
+import base64
 import streamlit as st
 from PIL import Image
 from config.config import load_config
