@@ -63,8 +63,8 @@ app.run()
 # Centered Logo and Additional Sidebar Content
 st.sidebar.markdown(
     """
-    <div style='display: flex; justify-content: center;'>
-    <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="150">
+    <div style="display: flex; justify-content: center; gap: 50px; margin: 20px 0;">
+        <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="150">
     </div>
     """, unsafe_allow_html=True
 )
@@ -73,7 +73,7 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-    <strong>🌱 Welcome to Journify 🌱</strong>
+    <h1>🌱 Welcome to Journify 🌱</h1>
     <div>
     """, unsafe_allow_html=True
 )
@@ -95,7 +95,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-    🚀 <strong>Transforming Learning into Lifelong Growth</strong><br>
+    🚀 <h2>Transforming Learning into Lifelong Growth</h2>
     <strong>Journify</strong> is to support your journey toward academic excellence.<br> 
     <em>Join us in unlocking new possibilities through knowledge and innovation.</em>
     </div>
@@ -105,7 +105,7 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-        <strong>⭐ Explore, Learn, and Grow with Journify!</strong>
+        <h3>⭐ Explore, Learn, and Grow with Journify!</h3>
     </div>
     """, unsafe_allow_html=True
 )
