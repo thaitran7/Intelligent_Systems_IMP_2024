@@ -14,6 +14,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+load_config()
+
 # Function to encode images to base64
 def load_image(image_file):
     try:
@@ -25,8 +27,6 @@ def load_image(image_file):
 
 # Load images
 journify_logo = load_image("Journify/resource/journify_logo.png")
-
-load_config()
 
 # ------------------ Main App UI ------------------ #
 class MultiApp:
