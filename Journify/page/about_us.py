@@ -41,8 +41,8 @@ def display_about_us():
         }
     ]
 
-    # CSS and HTML for team member cards
-    html_content = """
+    # CSS for styling
+    st.markdown("""
     <style>
         body {
             background-color: #ffffff;
@@ -79,19 +79,6 @@ def display_about_us():
             transform: translateY(-5px);
             border-color: #3498db;
         }
-        .profile-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
-            z-index: 0;
-            transition: transform 0.3s ease;
-            border-radius: 15px;
-            transform: translateX(-50%);
-        }
         .profile-card h3 {
             margin: 10px 0;
             font-size: 1.5em;
@@ -106,10 +93,6 @@ def display_about_us():
             line-height: 1.5em;
             position: relative;
             z-index: 1;
-        }
-        .profile-card .contact-info {
-            margin-top: 10px;
-            font-size: 0.9em;
         }
         .contact-info a {
             color: #3498db;
@@ -136,7 +119,7 @@ def display_about_us():
             color: #555;
         }
     </style>
-     """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
     # About Journify section
     st.markdown("### About Journify")
@@ -160,9 +143,9 @@ def display_about_us():
 
     # Generate HTML for each team member in two-member rows
     for i in range(0, len(team_members), 2):
-        html_content += "<div class='row'>"
-        for member in team_members[i:i+2]:
-            html_content += f"""
+        st.markdown("<div class='row'>", unsafe_allow_html=True)
+        for member in team_members[i:i + 2]:
+            st.markdown(f"""
             <div class='profile-card'>
                 <h3>{member["name"]}</h3>
                 <p><strong>ID:</strong> {member["id"]}</p>
@@ -172,21 +155,19 @@ def display_about_us():
                     <p><strong>Email:</strong> <a href="{member["email"]}">{member["email"].replace("mailto:", "")}</a></p>
                 </div>
             </div>
-            """
-        html_content += "</div>"  # Close the row div
-    html_content += "</div>"  # Close the container div
-        
+            """, unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)  # Close the row div
+    st.markdown("</div>", unsafe_allow_html=True)  # Close the container div
+
     # Footer
-    html_content += """
+    st.markdown("""
     <div class="info-section">
         <h3>Source Code & Support</h3>
         <p><a href="#">GitHub Repository</a> | <a href="#">Support Us</a></p>
     </div>
     <hr>
     <p style="text-align: center; color: #555;">© 2024 Intelligent Article Explorer. All rights reserved.</p>
-    """
-
-    st.components.v1.html(html_content, height=1200)
+    """, unsafe_allow_html=True)
 
 # Run the function to display the About Us section
 display_about_us()
