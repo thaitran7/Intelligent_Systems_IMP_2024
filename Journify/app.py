@@ -68,11 +68,10 @@ app.run()
 if journify_logo is None:
     st.error("Logo file not found!")
 else:
-    # Sidebar content
     st.sidebar.markdown(
         """
         <div style="display: flex; justify-content: center; gap: 50px; margin: 20px 0;">
-            <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="150">
+            <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="200">
         </div>
         """.format(journify_logo=journify_logo), 
         unsafe_allow_html=True
