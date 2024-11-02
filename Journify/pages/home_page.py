@@ -56,7 +56,7 @@ def home_page():
         <div style="display: flex; justify-content: center; gap: 20px; margin: 10px 0;">
             <img src="data:image/png;base64,{arxiv_logo}" alt="Intelligent Article Explorer Logo" width="150">
         </div>
-        """, 
+        """.format(arxiv_logo=arxiv_logo), 
         unsafe_allow_html=True
     )
     
