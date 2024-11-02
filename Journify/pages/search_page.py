@@ -6,7 +6,7 @@ def search_page():
     with col1:
         st.write(' ')
     with col2:
-        st.image("Journify/resource/ArXiv_logo.png", use_column_width=True)
+        st.image("Journify/resource/arxiv_logo.png", use_column_width=True)
     with col3:
         st.write(' ')
 
