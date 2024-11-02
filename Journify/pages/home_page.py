@@ -13,6 +13,7 @@ def load_image(image_file):
 
 # Load images
 journify_logo = load_image("Journify/resource/journify_logo.png")
+arxviv_logo = load_image("Journify/resource/arxiv_logo.png")
 
 def home_page():
     # Title and logo
@@ -50,7 +51,15 @@ def home_page():
         )
 
     # The arXiv Dataset
-    st.image("https://arxiv.org/arxiv_logo.png", width=100)  # arXiv logo
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center; gap: 20px; margin: 10px 0;">
+            <img src="data:image/png;base64,arxiv_logo}" alt="Intelligent Article Explorer Logo" width="150">
+        </div>
+        """.format(journify_logo=journify_logo), 
+        unsafe_allow_html=True
+    )
+    
     st.header("About the arXiv Dataset")
     st.markdown(
         """
