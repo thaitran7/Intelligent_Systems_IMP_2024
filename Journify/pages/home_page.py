@@ -15,16 +15,16 @@ journify_logo = load_image("Journify/resource/journify_logo.png")
 
 def home_page():
     # Title and logo
-    st.markdown("<h1 style='text-align: center;'>Welcome to Journify</h1>", unsafe_allow_html=True)
     st.markdown(
         """
+        <h1 style='text-align: center;'>Welcome to Journify</h1>
         <div style="display: flex; justify-content: center; gap: 20px; margin: 10px 0;">
             <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="200">
         </div>
         """.format(journify_logo=journify_logo), 
         unsafe_allow_html=True
     )
-
+    
     # Brief Introduction
     st.markdown(
         """
