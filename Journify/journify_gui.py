@@ -99,7 +99,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown(
     """
     <div style='text-align: center;'>
-    <h2>🚀 Transforming Learning into Lifelong Growth 🚀</h2>
+    <h2>🚀 Learning into Lifelong Growth 🚀</h2>
     <strong>Journify</strong> is to support your journey toward academic excellence.<br> 
     <em>Join us in unlocking new possibilities through knowledge and innovation.</em>
     </div>
