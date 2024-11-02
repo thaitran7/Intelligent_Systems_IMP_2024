@@ -13,7 +13,7 @@ def load_image(image_file):
 
 # Load images
 journify_logo = load_image("Journify/resource/journify_logo.png")
-arxviv_logo = load_image("Journify/resource/arxiv_logo.png")
+arxiv_logo = load_image("Journify/resource/arxiv_logo.png")
 
 def home_page():
     # Title and logo
