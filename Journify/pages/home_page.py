@@ -50,6 +50,18 @@ def home_page():
             """
         )
 
+    st.markdown(
+        """
+        <div style="border-bottom: 2px solid #FFC300; animation: glow 1s ease-in-out infinite alternate;">
+        </div>
+        <style>
+        @keyframes glow {
+            from { border-color: #FFC300; }
+            to { border-color: #FF5733; }
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
     # The arXiv Dataset
     st.markdown(
         """
