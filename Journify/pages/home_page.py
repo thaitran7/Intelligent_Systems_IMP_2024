@@ -37,6 +37,8 @@ def home_page():
         """
     )
 
+    st.markdown("<hr style='border-top:2px dotted #888'>", unsafe_allow_html=True)
+
     # Benefits of Journify with interactive toggles
     st.header("Why Choose Journify?")
     if st.button("Show Benefits"):
@@ -50,17 +52,7 @@ def home_page():
             """
         )
 
-    st.markdown(
-        """
-        <div style="border-bottom: 2px solid #FFC300; animation: glow 1s ease-in-out infinite alternate;">
-        </div>
-        <style>
-        @keyframes glow {
-            from { border-color: #FFC300; }
-            to { border-color: #FF5733; }
-        }
-        </style>
-        """, unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>⭐ ⭐ ⭐</h2>", unsafe_allow_html=True)
     
     # The arXiv Dataset
     st.markdown(
@@ -71,7 +63,7 @@ def home_page():
         """.format(arxiv_logo=arxiv_logo), 
         unsafe_allow_html=True
     )
-    
+
     st.header("About the arXiv Dataset")
     st.markdown(
         """
@@ -89,6 +81,20 @@ def home_page():
         """
     )
 
+    st.markdown(
+        """
+        <div style="border-bottom: 2px solid #FFC300; animation: glow 1s ease-in-out infinite alternate;">
+        </div>
+        <style>
+        @keyframes glow {
+            from { border-color: #FFC300; }
+            to { border-color: #FF5733; }
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<h2 style='text-align: center;'>👑 👑 👑 👑 👑</h2>", unsafe_allow_html=True)
+    
     # How Journify Works with collapsible sections
     st.header("How Journify Works")
     with st.expander("Click to learn more about our technologies"):
@@ -104,18 +110,21 @@ def home_page():
             """
         )
 
+    st.markdown("<h2 style='text-align: center;'>✨ ✨ ✨ ✨ ✨</h2>", unsafe_allow_html=True)
+
     # How to Use Journify with an interactive guide
     st.header("How to Use Journify")
     guide = [
-        "1. **Sign Up / Log In**: Create an account or log in to access personalized features.",
-        "2. **Explore Topics**: Use the search functionality to find articles related to your area of interest.",
-        "3. **Ask Questions**: Engage with our AI-driven chatbot by typing your research questions for immediate responses.",
-        "4. **Discover Recommendations**: Browse curated article suggestions based on your previous interactions and interests."
+        "1. **Explore Topics**: Use the search functionality to find articles related to your area of interest.",
+        "2. **Ask Questions**: Engage with our AI-driven chatbot by typing your research questions for immediate responses.",
+        "3. **Discover Recommendations**: Browse curated article suggestions based on your previous interactions and interests."
     ]
     
     for step in guide:
-        st.markdown(f"- {step}")
+        st.markdown(f"{step}")
 
+    st.markdown("<h2 style='text-align: center;'>🌟🌟🌟</h2>", unsafe_allow_html=True)
+    
     # Future Improvements with a slider for user feedback
     st.header("Future Improvements")
     st.markdown(
@@ -130,6 +139,8 @@ def home_page():
         """
     )
 
+    st.markdown("<h2 style='text-align: center;'>❤️ ❤️ ❤️</h2>", unsafe_allow_html=True)
+    
     # Worthy Investments
     st.header("Support Journify")
     st.markdown(
@@ -140,6 +151,8 @@ def home_page():
 
         Every contribution counts and enables us to enhance the platform for all users. Thank you for your support!
         """)
+
+    st.markdown("<h2 style='text-align: center;'>☀️ ☀️ ☀️ ☀️ ☀️</h2>", unsafe_allow_html=True)
 
     # Interactive Feedback Section
     st.header("We Value Your Feedback")
