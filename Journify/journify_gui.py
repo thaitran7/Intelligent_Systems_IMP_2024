@@ -7,6 +7,8 @@ from pages.about_us_page import about_us_page
 from pages.home_page import home_page
 from pages.trendings_page import trendings_page
 
+load_config()
+
 # Set page configuration as the first command
 st.set_page_config(
     page_title="Journify",
@@ -14,8 +16,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-load_config()
 
 # Function to encode images to base64
 def load_image(image_file):
