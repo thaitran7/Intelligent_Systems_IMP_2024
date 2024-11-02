@@ -1,10 +1,29 @@
 import streamlit as st
 from PIL import Image
 
+# Function to encode images to base64
+def load_image(image_file):
+    try:
+        with open(image_file, "rb") as file:
+            return base64.b64encode(file.read()).decode()
+    except Exception as e:
+        st.error(f"Error loading image: {e}")
+        return None
+
+# Load images
+journify_logo = load_image("Journify/resource/journify_logo.png")
+
 def home_page():
     # Title and logo
-    st.title("Welcome to Journify!")
-    st.image("Journify/resource/journify_logo.png", width=200)  # Update with your Journify logo path
+    st.markdown("<h1 style='text-align: center;'>Welcome to Journify</h1>", unsafe_allow_html=True)
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center; gap: 20px; margin: 10px 0;">
+            <img src="data:image/png;base64,{journify_logo}" alt="Intelligent Article Explorer Logo" width="200">
+        </div>
+        """.format(journify_logo=journify_logo), 
+        unsafe_allow_html=True
+    )
 
     # Brief Introduction
     st.markdown(
